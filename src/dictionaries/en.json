@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "solutions": "Solutions",
+    "products": "Products",
+    "projects": "Projects",
+    "services": "Services",
+    "requestStudy": "Request a Study"
+  },
+  "hero": {
+    "eyebrow": "AIR-TO-WATER HEAT PUMP SOLUTIONS",
+    "title": "Efficient Heating and Cooling, Engineered for Every Project",
+    "subtitle": "Reliable heat-pump solutions for swimming pools, industrial basins, domestic hot water and residential buildings.",
+    "primaryCta": "Request a Project Study",
+    "secondaryCta": "Explore Our Solutions"
+  },
+  "about": {
+    "title": "About IRIS Energy",
+    "p1": "IRIS Energy is a French company and registered brand established in 2011. Its target markets cover Europe and Mediterranean countries, with products serving customers across Europe, Africa and the Middle East.",
+    "p2": "IRIS Energy has operated in the Egyptian market since 2020 through cooperation with AOI-ABD. This local presence combines product expertise with engineering support for project studies, installation, maintenance and long-term service.",
+    "p3": "We accompany clients from early project stages through system selection, technical studies, installation and ongoing support. Our objective is to propose a solution that balances performance, budget, energy efficiency and service quality."
+  }
+}
