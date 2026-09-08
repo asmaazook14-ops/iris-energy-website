@@ -1,4 +1,5 @@
-import { Wrench, BookOpen, Settings, Lightbulb, GraduationCap, CheckCircle2, Factory } from 'lucide-react';
+import Link from 'next/link';
+import { Wrench, BookOpen, Settings, Lightbulb, GraduationCap, CheckCircle2, Factory, ArrowRight, ArrowLeft } from 'lucide-react';
 
 const servicesEn = [
   { icon: BookOpen, title: 'Project Study', desc: 'Review application, dimensions, operating season, climate, target temperature and usage pattern.' },
@@ -23,24 +24,27 @@ const servicesAr = [
 export default async function Services(props: { params: Promise<{ lang: 'en' | 'ar' }> }) {
   const params = await props.params;
   const lang = params.lang;
-  const services = lang === 'en' ? servicesEn : servicesAr;
+  const isEn = lang === 'en';
+  const services = isEn ? servicesEn : servicesAr;
 
   return (
     <div className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-navy)] mb-6">
-            {lang === 'en' ? 'Engineering Services' : 'الخدمات الهندسية'}
+            {isEn ? 'Engineering Services' : 'الخدمات الهندسية'}
           </h1>
           <p className="text-lg text-[var(--color-brand-dark-gray)]">
-            {lang === 'en'
-              ? 'We accompany clients from early project stages through system selection, technical studies, installation and ongoing support.'
-              : 'نرافق العملاء من المراحل الأولى للمشروع عبر اختيار النظام، والدراسات الفنية، والتركيب، والدعم المستمر.'}
+            {isEn
+              ? 'IRIS Energy supports the full project lifecycle, from early concept and system selection to installation and continued operation.'
+              : 'تدعم آيريس إنرجي دورة حياة المشروع بالكامل، بدءًا من الفكرة الأولى واختيار النظام وحتى التركيب والتشغيل المستمر.'}
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        {/* Services Grid */}
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
@@ -57,6 +61,35 @@ export default async function Services(props: { params: Promise<{ lang: 'en' | '
               </div>
             );
           })}
+        </div>
+
+        {/* Recommended Service CTA Section */}
+        <div className="max-w-5xl mx-auto bg-[var(--color-brand-light)] border border-[var(--color-brand-blue)]/20 p-8 md:p-10 rounded-2xl shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <span className="text-xs font-bold tracking-wider uppercase text-[var(--color-brand-blue)] mb-2 block">
+                {isEn ? 'RECOMMENDED SERVICE CTA' : 'طلب خدمة موصى به'}
+              </span>
+              <h2 className="text-2xl font-bold text-[var(--color-brand-navy)] mb-3">
+                {isEn ? 'REQUEST A PROJECT STUDY' : 'طلب دراسة مشروع'}
+              </h2>
+              <p className="text-[var(--color-brand-dark-gray)] leading-relaxed">
+                {isEn
+                  ? 'Provide the project type, location, water volume, target temperature and available drawings so the engineering team can review the requirement.'
+                  : 'يرجى تزويدنا بنوع المشروع، والموقع، وحجم المياه، ودرجة الحرارة المستهدفة، والمخططات المتاحة حتى يتمكن الفريق الهندسي من مراجعة المتطلبات.'}
+              </p>
+            </div>
+            
+            <div className="flex-shrink-0">
+              <Link
+                href={`/${lang}/request-study`}
+                className="inline-flex items-center gap-2 bg-[var(--color-brand-blue)] hover:bg-[var(--color-brand-navy)] text-white font-semibold px-6 py-3.5 rounded-lg transition-colors text-sm"
+              >
+                <span>{isEn ? 'Request a Study' : 'طلب دراسة'}</span>
+                {isEn ? <ArrowRight className="w-4 h-4" /> : <ArrowLeft className="w-4 h-4" />}
+              </Link>
+            </div>
+          </div>
         </div>
 
       </div>
