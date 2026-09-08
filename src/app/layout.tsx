@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   title: "IRIS Energy | Air-to-Water Heat Pump Solutions",
   description: "Efficient heat-pump solutions for pools, industrial basins, hot water and buildings.",
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     title: "IRIS Energy",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     siteName: "IRIS Energy",
     images: [
       {
-        url: "/logo.svg",
-        width: 800,
-        height: 600,
+        url: "/logo.png",
+        width: 1200,
+        height: 412,
       },
     ],
     locale: "en_US",

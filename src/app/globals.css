@@ -23,6 +23,35 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* Image container utilities for strict aspect ratios */
+.img-container-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.img-container-standard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.img-container-square {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+/* Image defaults */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .rtl {

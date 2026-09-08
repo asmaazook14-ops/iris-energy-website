@@ -9,7 +9,7 @@ export default async function About(props: { params: Promise<{ lang: 'en' | 'ar'
   const aboutDict = dict.about as any;
 
   return (
-    <div className="py-20 bg-white">
+    <div className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-navy)] mb-10 text-center">
           {aboutDict.title}

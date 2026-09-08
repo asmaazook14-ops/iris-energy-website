@@ -78,7 +78,7 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
   const features = lang === 'en' ? featuresEn : featuresAr;
 
   return (
-    <div className="py-20 bg-white">
+    <div className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -96,12 +96,12 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
         <div className="grid md:grid-cols-3 gap-8 mb-24">
           {categories.map((cat, idx) => (
             <div key={idx} className="bg-[var(--color-brand-light)] border border-[var(--color-brand-gray)] rounded-xl overflow-hidden shadow-sm flex flex-col">
-              <div className="relative h-64">
+              <div className="img-container-standard">
                 <Image
                   src={idx === 0 ? '/images/Products/product-iris-pool-heat-pump.webp' : (idx === 1 ? '/images/Projects/project-multi-unit-heat-pump-system.webp' : '/images/Products/product-showroom-unit.webp')}
                   alt={cat.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <div className="p-8 flex-grow">

@@ -37,8 +37,8 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Link href={`/${lang}`} className="flex items-center">
-              <Image src="/logo.svg" alt="IRIS Energy Logo" width={120} height={36} className="h-10 w-auto" />
+            <Link href={`/${lang}`} className="flex-shrink-0 flex items-center">
+              <Image src="/logo.png" alt="IRIS Energy Logo" width={150} height={51} className="h-10 w-auto" priority />
             </Link>
           </div>
           

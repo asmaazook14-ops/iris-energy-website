@@ -62,7 +62,7 @@ export default async function Solutions(props: { params: Promise<{ lang: 'en' | 
   const solutions = lang === 'en' ? solutionsEn : solutionsAr;
 
   return (
-    <div className="py-20 bg-[var(--color-brand-light)]">
+    <div className="py-24 bg-[var(--color-brand-light)]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-navy)] mb-6">
@@ -78,7 +78,7 @@ export default async function Solutions(props: { params: Promise<{ lang: 'en' | 
         <div className="space-y-24">
           {solutions.map((sol, idx) => (
             <div key={idx} className={`flex flex-col md:flex-row gap-12 items-center ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              <div className="flex-1 w-full relative h-[300px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg border border-[var(--color-brand-gray)]">
+              <div className="flex-1 w-full img-container-standard rounded-2xl overflow-hidden shadow-lg border border-[var(--color-brand-gray)]">
                 <Image
                   src={sol.img}
                   alt={sol.title}

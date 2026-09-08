@@ -28,7 +28,7 @@ export default async function Projects(props: { params: Promise<{ lang: 'en' | '
   const projects = lang === 'en' ? projectsEn : projectsAr;
 
   return (
-    <div className="py-20 bg-[var(--color-brand-light)]">
+    <div className="py-24 bg-[var(--color-brand-light)]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -45,14 +45,14 @@ export default async function Projects(props: { params: Promise<{ lang: 'en' | '
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <div key={idx} className="bg-white rounded-xl shadow-md border border-[var(--color-brand-gray)] overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
-              <div className="relative h-56 overflow-hidden">
+              <div className="img-container-video overflow-hidden">
                 <Image
                   src={project.img}
                   alt={project.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-[var(--color-brand-blue)] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                <div className="absolute top-4 right-4 bg-[var(--color-brand-blue)] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">
                   {project.sector}
                 </div>
               </div>

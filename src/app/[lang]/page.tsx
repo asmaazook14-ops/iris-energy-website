@@ -51,7 +51,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* Introduction */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -64,7 +64,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
                   : "تتخصص إيريس إنرجي في تكنولوجيا المضخات الحرارية (هواء-ماء) للمشاريع التي تتطلب تدفئة وتبريد موثوقين واستخدام فعال للطاقة. من المسابح الخاصة إلى الفنادق والمدارس والنوادي والتطبيقات الصناعية، يتم اختيار كل نظام بناءً على ظروف التشغيل ومتطلبات الأداء الخاصة بالمشروع."}
               </p>
             </div>
-            <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
+            <div className="img-container-standard rounded-2xl shadow-2xl">
               <Image
                 src="/images/Homepage/homepage-residential-pool-heat-pump.webp"
                 alt="IRIS Energy Residential Pool Heat Pump"
@@ -77,7 +77,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* Applications / Solutions Preview */}
-      <section className="py-20 bg-[var(--color-brand-light)]">
+      <section className="py-24 bg-[var(--color-brand-light)]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-[var(--color-brand-navy)] mb-6">
@@ -123,7 +123,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* Why IRIS */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-[var(--color-brand-navy)] mb-6">
@@ -149,7 +149,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* Project Proof */}
-      <section className="py-20 bg-[var(--color-brand-navy)] text-white">
+      <section className="py-24 bg-[var(--color-brand-navy)] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6">
             {lang === 'en' ? 'Proven Project Experience' : 'خبرة مشاريع مثبتة'}

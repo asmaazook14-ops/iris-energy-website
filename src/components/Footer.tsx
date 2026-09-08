@@ -19,7 +19,7 @@ export function Footer({ lang }: { lang: 'en' | 'ar' }) {
           {/* Brand Col */}
           <div className="lg:col-span-2">
             <Link href={`/${lang}`} className="mb-4 block">
-              <Image src="/logo.svg" alt="IRIS Energy Logo" width={140} height={42} className="h-12 w-auto brightness-0 invert" />
+              <Image src="/logo.png" alt="IRIS Energy Logo" width={150} height={51} className="h-12 w-auto brightness-0 invert" />
             </Link>
             <p className="text-[var(--color-brand-gray)] max-w-md mt-4">
               {lang === 'en' 
