@@ -19,6 +19,28 @@
     "title": "About IRIS Energy",
     "p1": "IRIS Energy is a French company and registered brand established in 2011. Its target markets cover Europe and Mediterranean countries, with products serving customers across Europe, Africa and the Middle East.",
     "p2": "IRIS Energy has operated in the Egyptian market since 2020 through cooperation with AOI-ABD. This local presence combines product expertise with engineering support for project studies, installation, maintenance and long-term service.",
-    "p3": "We accompany clients from early project stages through system selection, technical studies, installation and ongoing support. Our objective is to propose a solution that balances performance, budget, energy efficiency and service quality."
+    "whatWeDoTitle": "What We Do",
+    "p3": "We accompany clients from early project stages through system selection, technical studies, installation and ongoing support. Our objective is to propose a solution that balances performance, budget, energy efficiency and service quality.",
+    "valuesTitle": "Suggested Values",
+    "tableHeaderValue": "Value",
+    "tableHeaderMeaning": "Meaning",
+    "values": [
+      {
+        "value": "Engineering First",
+        "meaning": "Recommendations begin with project requirements and operating conditions."
+      },
+      {
+        "value": "Reliable Performance",
+        "meaning": "Components and system configurations are selected for dependable operation."
+      },
+      {
+        "value": "Energy Responsibility",
+        "meaning": "Heat-pump technology is applied to reduce unnecessary energy use."
+      },
+      {
+        "value": "Long-Term Support",
+        "meaning": "Installation, maintenance and spare-parts follow-up are part of the project lifecycle."
+      }
+    ]
   }
 }
