@@ -78,14 +78,14 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
   const features = lang === 'en' ? featuresEn : featuresAr;
 
   return (
-    <div className="py-24 bg-white">
+    <div className="py-24 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-brand-navy)] mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {lang === 'en' ? 'Our Products' : 'منتجاتنا'}
           </h1>
-          <p className="text-lg text-[var(--color-brand-dark-gray)] mb-8">
+          <p className="text-lg text-slate-300 mb-8">
             {lang === 'en'
               ? 'The IRIS Energy portfolio includes residential, commercial and industrial full-inverter heat pumps.'
               : 'تضم مجموعة منتجات إيريس إنرجي مضخات حرارية بتقنية الانفرتر الكامل (Full Inverter) للتطبيقات السكنية والتجارية والصناعية.'}
@@ -105,8 +105,8 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
                 />
               </div>
               <div className="p-8 flex-grow">
-                <h2 className="text-2xl font-bold text-[var(--color-brand-navy)] mb-6 border-b border-[var(--color-brand-gray)] pb-4">{cat.title}</h2>
-                <ul className="space-y-4 text-[var(--color-brand-dark-gray)]">
+                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[var(--color-brand-gray)] pb-4">{cat.title}</h2>
+                <ul className="space-y-4 text-slate-300">
                   <li className="flex justify-between items-center">
                     <span className="font-semibold">{lang === 'en' ? 'Range' : 'الموديلات'}:</span>
                     <span>{cat.models}</span>
@@ -136,17 +136,17 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
 
         {/* Technical Features */}
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[var(--color-brand-navy)] mb-10 text-center">
+          <h2 className="text-3xl font-bold text-white mb-10 text-center">
             {lang === 'en' ? 'Referenced Technical Features' : 'المواصفات الفنية'}
           </h2>
-          <div className="bg-white rounded-xl shadow-md border border-[var(--color-brand-gray)] overflow-hidden">
-            <div className="divide-y divide-[var(--color-brand-gray)]">
+          <div className="bg-white/5 border border-white/10 hover:border-[var(--color-brand-blue)]/50 rounded-xl shadow-md overflow-hidden transition-colors">
+            <div className="divide-y divide-white/10">
               {features.map((item, idx) => (
-                <div key={idx} className="flex flex-col sm:flex-row p-6 hover:bg-[var(--color-brand-light)] transition-colors">
-                  <div className="sm:w-1/3 font-bold text-[var(--color-brand-navy)] mb-2 sm:mb-0">
+                <div key={idx} className="flex flex-col sm:flex-row p-6 hover:bg-white/5 transition-colors">
+                  <div className="sm:w-1/3 font-bold text-white mb-2 sm:mb-0">
                     {item.feature}
                   </div>
-                  <div className="sm:w-2/3 text-[var(--color-brand-dark-gray)]">
+                  <div className="sm:w-2/3 text-slate-300">
                     {item.spec}
                   </div>
                 </div>

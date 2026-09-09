@@ -14,8 +14,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #0F172A;
+  --background: #0B192C;
+  --foreground: #E2E8F0;
 }
 
 body {

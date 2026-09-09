@@ -6,102 +6,110 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-const navLinks = [
-  { href: '/', labelEn: 'Home', labelAr: 'الرئيسية' },
-  { href: '/about', labelEn: 'About', labelAr: 'من نحن' },
-  { href: '/solutions', labelEn: 'Solutions', labelAr: 'الحلول' },
-  { href: '/products', labelEn: 'Products', labelAr: 'المنتجات' },
-  { href: '/projects', labelEn: 'Projects', labelAr: 'المشاريع' },
-  { href: '/services', labelEn: 'Services', labelAr: 'الخدمات' },
-];
-
 export function Header({ lang }: { lang: 'en' | 'ar' }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const isEn = lang === 'en';
 
-  // Close mobile menu on route change
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // Close mobile menu on route change
     setIsOpen(false);
   }, [pathname]);
 
   const toggleLang = () => {
-    // Basic lang switcher logic based on path
     const targetLang = lang === 'en' ? 'ar' : 'en';
     const cleanPath = pathname.replace(`/${lang}`, '') || '/';
     return `/${targetLang}${cleanPath === '/' ? '' : cleanPath}`;
   };
 
+  const primaryLinks = [
+    { href: '/solutions', label: isEn ? 'Solutions' : 'الحلول' },
+    { href: '/products', label: isEn ? 'Products' : 'المنتجات' },
+    { href: '/projects', label: isEn ? 'Projects' : 'المشاريع' },
+    { href: '/services', label: isEn ? 'Engineering Process' : 'العملية الهندسية' },
+    { href: '/about', label: isEn ? 'About' : 'من نحن' },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-[var(--color-brand-gray)]">
+    <header className="sticky top-0 z-50 w-full bg-[#0B192C] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link href={`/${lang}`} className="flex-shrink-0 flex items-center">
-              <Image src="/logo.png" alt="IRIS Energy Logo" width={150} height={51} className="h-10 w-auto" priority />
+              <Image src="/logo.svg" alt="IRIS Energy Logo" width={150} height={51} className="h-10 w-auto" priority />
             </Link>
           </div>
           
-          <nav className="hidden md:flex space-x-8 rtl:space-x-reverse">
-            {navLinks.map((link) => (
-              <Link
+          <nav className="hidden lg:flex space-x-8 rtl:space-x-reverse h-full items-center">
+            {primaryLinks.map((link) => (
+              <Link 
                 key={link.href}
-                href={`/${lang}${link.href === '/' ? '' : link.href}`}
-                className={`text-sm font-medium transition-colors hover:text-[var(--color-brand-blue)] ${pathname === `/${lang}${link.href === '/' ? '' : link.href}` ? 'text-[var(--color-brand-blue)]' : 'text-[var(--color-brand-dark-gray)]'}`}
+                href={`/${lang}${link.href}`}
+                className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
               >
-                {lang === 'en' ? link.labelEn : link.labelAr}
+                {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
-            <Link href={toggleLang()} className="text-sm font-medium text-[var(--color-brand-dark-gray)] hover:text-[var(--color-brand-blue)]">
-              {lang === 'en' ? 'العربية' : 'English'}
-            </Link>
-            <Link
-              href={`/${lang}/request-study`}
-              className="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-md text-white bg-[var(--color-brand-blue)] hover:bg-blue-700 transition-colors"
+          <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
+            <Link 
+              href={toggleLang()}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
             >
-              {lang === 'en' ? 'Request a Study' : 'طلب دراسة مشروع'}
+              {isEn ? 'عربي' : 'EN'}
+            </Link>
+            <Link 
+              href={`/${lang}/request-study`}
+              className="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-bold rounded-lg text-white bg-[var(--color-brand-blue)] hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
             </Link>
           </div>
 
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button */}
+          <div className="flex items-center lg:hidden">
+            <Link 
+              href={toggleLang()}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors uppercase tracking-wider mr-4 rtl:mr-0 rtl:ml-4"
+            >
+              {isEn ? 'عربي' : 'EN'}
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[var(--color-brand-dark-gray)] hover:text-[var(--color-brand-navy)] focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-white/5 focus:outline-none transition-colors"
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <span className="sr-only">{isEn ? 'Open main menu' : 'فتح القائمة الرئيسية'}</span>
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-[var(--color-brand-gray)]">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#0B192C] border-b border-white/10 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)]">
+          <div className="px-4 pt-4 pb-6 space-y-4">
+            {primaryLinks.map((link) => (
               <Link
                 key={link.href}
-                href={`/${lang}${link.href === '/' ? '' : link.href}`}
-                className="block px-3 py-2 rounded-md text-base font-medium text-[var(--color-brand-dark-gray)] hover:text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-light)]"
+                href={`/${lang}${link.href}`}
+                className="block px-3 py-3 rounded-md text-base font-bold text-white hover:bg-white/5 transition-colors"
               >
-                {lang === 'en' ? link.labelEn : link.labelAr}
+                {link.label}
               </Link>
             ))}
-            <div className="mt-4 pt-4 border-t border-[var(--color-brand-gray)]">
-              <Link
-                href={toggleLang()}
-                className="block px-3 py-2 rounded-md text-base font-medium text-[var(--color-brand-dark-gray)] hover:text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-light)]"
-              >
-                {lang === 'en' ? 'العربية (Arabic)' : 'English'}
-              </Link>
-              <Link
+            <div className="pt-6 border-t border-white/10">
+              <Link 
                 href={`/${lang}/request-study`}
-                className="mt-2 block w-full text-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[var(--color-brand-blue)] hover:bg-blue-700 transition-colors"
+                className="w-full flex justify-center items-center px-4 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-[var(--color-brand-blue)] hover:bg-blue-700 transition-colors shadow-lg"
               >
-                {lang === 'en' ? 'Request a Study' : 'طلب دراسة مشروع'}
+                {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
               </Link>
             </div>
           </div>

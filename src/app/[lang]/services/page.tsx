@@ -248,14 +248,14 @@ export default async function Services(
   return (
     <main
       dir={isArabic ? 'rtl' : 'ltr'}
-      className="bg-white text-[var(--color-brand-navy)]"
+      className="bg-white/5 text-white"
     >
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[var(--color-brand-light)]">
+      <section className="relative overflow-hidden bg-white/5">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/70 blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/5/70 blur-3xl" />
           <div className="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-[var(--color-brand-blue)]/10 blur-3xl" />
         </div>
 
@@ -274,7 +274,7 @@ export default async function Services(
                 {content.title}
               </h1>
 
-              <p className="text-xl md:text-2xl leading-relaxed max-w-3xl text-[var(--color-brand-dark-gray)]">
+              <p className="text-xl md:text-2xl leading-relaxed max-w-3xl text-slate-300">
                 {content.subtitle}
               </p>
 
@@ -294,7 +294,7 @@ export default async function Services(
 
                 <a
                   href="#services"
-                  className="inline-flex items-center gap-3 px-7 py-4 rounded-lg border border-[var(--color-brand-navy)]/20 bg-white/60 font-semibold hover:bg-white transition-colors"
+                  className="inline-flex items-center gap-3 px-7 py-4 rounded-lg border border-[var(--color-brand-navy)]/20 bg-white/5/60 font-semibold hover:bg-white/5 transition-colors"
                 >
                   {content.exploreButton}
 
@@ -309,7 +309,7 @@ export default async function Services(
       {/* =========================================================
           PROJECT LIFECYCLE
       ========================================================= */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <p className="text-sm font-bold tracking-[0.18em] text-[var(--color-brand-blue)] mb-4">
@@ -320,7 +320,7 @@ export default async function Services(
               {content.lifecycleTitle}
             </h2>
 
-            <p className="text-lg leading-relaxed text-[var(--color-brand-dark-gray)]">
+            <p className="text-lg leading-relaxed text-slate-300">
               {content.lifecycleSubtitle}
             </p>
           </div>
@@ -334,7 +334,7 @@ export default async function Services(
                   key={service.number}
                   className="relative group"
                 >
-                  <div className="h-full p-5 rounded-2xl border border-[var(--color-brand-gray)] bg-[var(--color-brand-light)] group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
+                  <div className="h-full p-5 rounded-2xl border border-white/10 bg-white/5 group-hover:bg-white/5 group-hover:shadow-lg transition-all duration-300">
                     <div className="flex items-center justify-between mb-7">
                       <span className="text-sm font-bold text-[var(--color-brand-blue)]">
                         {service.number}
@@ -347,7 +347,7 @@ export default async function Services(
                       {service.shortTitle}
                     </h3>
 
-                    <p className="text-xs text-[var(--color-brand-dark-gray)] leading-relaxed">
+                    <p className="text-xs text-slate-300 leading-relaxed">
                       {service.title}
                     </p>
                   </div>
@@ -373,7 +373,7 @@ export default async function Services(
       ========================================================= */}
       <section
         id="services"
-        className="py-24 bg-[var(--color-brand-light)]"
+        className="py-24 bg-white/5"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
@@ -385,7 +385,7 @@ export default async function Services(
               {content.servicesTitle}
             </h2>
 
-            <p className="text-lg text-[var(--color-brand-dark-gray)] leading-relaxed">
+            <p className="text-lg text-slate-300 leading-relaxed">
               {content.servicesSubtitle}
             </p>
           </div>
@@ -403,7 +403,7 @@ export default async function Services(
               return (
                 <article
                   key={service.number}
-                  className="group bg-white border border-[var(--color-brand-gray)] rounded-2xl p-7 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="group bg-white/5 border border-white/10 rounded-2xl p-7 md:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   {/* Number + Icon */}
                   <div className="flex items-center justify-between mb-8">
@@ -411,7 +411,7 @@ export default async function Services(
                       {service.number}
                     </span>
 
-                    <div className="w-12 h-12 rounded-xl bg-[var(--color-brand-light)] border border-[var(--color-brand-gray)] flex items-center justify-center text-[var(--color-brand-blue)] group-hover:bg-[var(--color-brand-blue)] group-hover:text-white transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[var(--color-brand-blue)] group-hover:bg-[var(--color-brand-blue)] group-hover:text-white transition-colors duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
@@ -422,12 +422,12 @@ export default async function Services(
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[var(--color-brand-dark-gray)] leading-7 mb-7">
+                  <p className="text-slate-300 leading-7 mb-7">
                     {service.desc}
                   </p>
 
                   {/* Result */}
-                  <div className="pt-5 border-t border-[var(--color-brand-gray)]">
+                  <div className="pt-5 border-t border-white/10">
                     <div className="flex gap-3">
                       <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-[var(--color-brand-blue)] mt-0.5" />
 
@@ -436,7 +436,7 @@ export default async function Services(
                           {content.resultLabel}
                         </p>
 
-                        <p className="text-sm leading-relaxed text-[var(--color-brand-dark-gray)]">
+                        <p className="text-sm leading-relaxed text-slate-300">
                           {service.result}
                         </p>
                       </div>
@@ -452,7 +452,7 @@ export default async function Services(
       {/* =========================================================
           WHY THIS APPROACH
       ========================================================= */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
@@ -462,7 +462,7 @@ export default async function Services(
                 return (
                   <div
                     key={item.title}
-                    className="p-8 rounded-2xl border border-[var(--color-brand-gray)]"
+                    className="p-8 rounded-2xl border border-white/10"
                   >
                     <Icon className="w-8 h-8 text-[var(--color-brand-blue)] mb-6" />
 
@@ -470,7 +470,7 @@ export default async function Services(
                       {item.title}
                     </h3>
 
-                    <p className="text-[var(--color-brand-dark-gray)] leading-7">
+                    <p className="text-slate-300 leading-7">
                       {item.text}
                     </p>
                   </div>
@@ -490,7 +490,7 @@ export default async function Services(
       >
         <div className="container mx-auto">
           <div className="relative overflow-hidden rounded-3xl bg-[var(--color-brand-navy)] text-white p-10 md:p-16 lg:p-20">
-            <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
+            <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5/5" />
 
             <div className="absolute -left-20 -bottom-32 w-96 h-96 rounded-full bg-[var(--color-brand-blue)]/20" />
 
@@ -510,7 +510,7 @@ export default async function Services(
               <div className="flex flex-wrap items-center gap-5">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-3 px-7 py-4 rounded-lg bg-white text-[var(--color-brand-navy)] font-bold hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-3 px-7 py-4 rounded-lg bg-white/5 text-white font-bold hover:opacity-90 transition-opacity"
                 >
                   {content.ctaButton}
 

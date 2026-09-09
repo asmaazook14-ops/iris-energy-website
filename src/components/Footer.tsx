@@ -2,45 +2,49 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const navLinks = [
-  { href: '/', labelEn: 'Home', labelAr: 'الرئيسية' },
-  { href: '/about', labelEn: 'About', labelAr: 'من نحن' },
   { href: '/solutions', labelEn: 'Solutions', labelAr: 'الحلول' },
   { href: '/products', labelEn: 'Products', labelAr: 'المنتجات' },
   { href: '/projects', labelEn: 'Projects', labelAr: 'المشاريع' },
-  { href: '/services', labelEn: 'Services', labelAr: 'الخدمات' },
+  { href: '/services', labelEn: 'Engineering Process', labelAr: 'العملية الهندسية' },
+  { href: '/about', labelEn: 'About IRIS', labelAr: 'عن إيريس' },
 ];
 
 export function Footer({ lang }: { lang: 'en' | 'ar' }) {
+  const isEn = lang === 'en';
+
   return (
-    <footer className="bg-[var(--color-brand-navy)] text-white pt-16 pb-8 border-t border-[var(--color-brand-blue)]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-[#0B192C] text-white pt-24 pb-12 border-t border-white/10 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[var(--color-brand-blue)]/50 to-transparent" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           
           {/* Brand Col */}
           <div className="lg:col-span-2">
-            <Link href={`/${lang}`} className="mb-4 block">
-              <Image src="/logo.png" alt="IRIS Energy Logo" width={150} height={51} className="h-12 w-auto brightness-0 invert" />
+            <Link href={`/${lang}`} className="mb-6 block">
+              <Image src="/logo.svg" alt="IRIS Energy Logo" width={150} height={51} className="h-10 w-auto" />
             </Link>
-            <p className="text-[var(--color-brand-gray)] max-w-md mt-4">
-              {lang === 'en' 
-                ? 'Specializing in efficient air-to-water heat-pump technology for projects that require dependable heating, cooling and efficient energy use.' 
-                : 'متخصصون في تكنولوجيا المضخات الحرارية (هواء-ماء) عالية الكفاءة للمشاريع التي تتطلب تدفئة وتبريد موثوقين واستخدام فعال للطاقة.'}
+            <p className="text-slate-400 max-w-md mt-4 text-lg font-light leading-relaxed">
+              {isEn 
+                ? 'Engineering efficient air-to-water heat-pump solutions for projects that require dependable heating, cooling, and intelligent thermal integration.' 
+                : 'تطوير حلول هندسية متكاملة لمضخات الحرارة (هواء-ماء) للمشاريع التي تتطلب تدفئة وتبريد موثوقين وتكاملاً حرارياً ذكياً.'}
             </p>
           </div>
 
           {/* Links Col */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">
-              {lang === 'en' ? 'Quick Links' : 'روابط سريعة'}
+            <h3 className="text-[var(--color-brand-gold)] font-bold mb-6 text-sm tracking-wider uppercase">
+              {isEn ? 'Platform' : 'المنصة'}
             </h3>
             <ul className="space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={`/${lang}${link.href === '/' ? '' : link.href}`}
-                    className="text-[var(--color-brand-gray)] hover:text-white transition-colors"
+                    href={`/${lang}${link.href}`}
+                    className="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all"
                   >
-                    {lang === 'en' ? link.labelEn : link.labelAr}
+                    {isEn ? link.labelEn : link.labelAr}
                   </Link>
                 </li>
               ))}
@@ -49,28 +53,35 @@ export function Footer({ lang }: { lang: 'en' | 'ar' }) {
 
           {/* CTA Col */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">
-              {lang === 'en' ? 'Start a Project' : 'ابدأ مشروعاً'}
+            <h3 className="text-[var(--color-brand-gold)] font-bold mb-6 text-sm tracking-wider uppercase">
+              {isEn ? 'Start a Project' : 'ابدأ مشروعاً'}
             </h3>
-            <p className="text-[var(--color-brand-gray)] mb-6">
-              {lang === 'en'
-                ? 'Share your project details to receive an initial technical assessment.'
-                : 'شارك تفاصيل مشروعك للحصول على تقييم فني أولي.'}
+            <p className="text-slate-300 mb-6 text-sm leading-relaxed">
+              {isEn
+                ? 'Request a professional technical study to determine the optimal thermal solution for your application.'
+                : 'اطلب دراسة فنية متخصصة لتحديد الحل الحراري الأمثل لتطبيقك.'}
             </p>
             <Link
               href={`/${lang}/request-study`}
-              className="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-md text-[var(--color-brand-navy)] bg-[var(--color-brand-gold)] hover:bg-yellow-400 transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center px-6 py-3 border border-[var(--color-brand-blue)] text-sm font-bold rounded-lg text-white bg-[var(--color-brand-blue)]/20 hover:bg-[var(--color-brand-blue)] hover:border-transparent transition-all w-full sm:w-auto"
             >
-              {lang === 'en' ? 'Request a Study' : 'طلب دراسة مشروع'}
+              {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
             </Link>
           </div>
         </div>
 
-        <div className="border-t border-[var(--color-brand-dark-gray)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[var(--color-brand-gray)] text-sm">
-            &copy; {new Date().getFullYear()} IRIS Energy. {lang === 'en' ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-sm font-medium">
+            &copy; {new Date().getFullYear()} IRIS Energy. {isEn ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}
           </p>
-          {/* Note: NO social links as they could expose contact details unless explicitly provided. Since none were provided, I omit them. */}
+          <div className="flex space-x-6 rtl:space-x-reverse text-sm font-medium text-slate-500">
+            <span className="hover:text-slate-300 transition-colors cursor-not-allowed">
+              {isEn ? 'Privacy Policy' : 'سياسة الخصوصية'}
+            </span>
+            <span className="hover:text-slate-300 transition-colors cursor-not-allowed">
+              {isEn ? 'Terms of Service' : 'شروط الخدمة'}
+            </span>
+          </div>
         </div>
       </div>
     </footer>
