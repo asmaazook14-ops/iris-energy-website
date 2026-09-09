@@ -23,7 +23,7 @@ export function Footer({ lang }: { lang: 'en' | 'ar' }) {
           {/* Brand Col */}
           <div className="lg:col-span-2">
             <Link href={`/${lang}`} className="mb-6 block">
-              <Image src="/logo.svg" alt="IRIS Energy Logo" width={150} height={51} className="h-10 w-auto" />
+              <Image src="/logo.png" alt="IRIS Energy Logo" width={150} height={51} className="h-10 w-auto" />
             </Link>
             <p className="text-slate-400 max-w-md mt-4 text-lg font-light leading-relaxed">
               {isEn 
