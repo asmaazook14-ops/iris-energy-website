@@ -79,15 +79,15 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center border-b border-white/10 overflow-hidden">
         {/* Background Engineering Schematic Graphics */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-[#0B192C]">
           <Image
             src="/images/Homepage/homepage-commercial-pool.webp"
             alt="IRIS Energy Commercial Pool Installation"
             fill
-            className="object-cover opacity-10 mix-blend-overlay"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B192C]/80 via-[#0B192C]/95 to-[#0B192C]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,25,44,0.75)] to-[rgba(11,25,44,0.85)]" />
           
           <div className="absolute top-1/4 right-10 w-[800px] h-[800px] border-[1px] border-[var(--color-brand-blue)]/20 rounded-full border-dashed animate-[spin_120s_linear_infinite]" />
         </div>
