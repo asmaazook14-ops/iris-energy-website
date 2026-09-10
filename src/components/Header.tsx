@@ -41,7 +41,7 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
                 alt="IRIS Energy Logo" 
                 width={150} 
                 height={51} 
-                className="h-10 w-auto mix-blend-screen invert grayscale brightness-200" 
+                className="h-10 w-auto" 
                 priority 
               />
             </Link>
