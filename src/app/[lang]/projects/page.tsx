@@ -14,7 +14,7 @@ export default async function ProjectsHub(props: { params: Promise<{ lang: 'en' 
     <div className="bg-[#0B192C] min-h-screen">
       {/* Header Section */}
       <section className="py-24 relative overflow-hidden border-b border-white/10">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[var(--color-brand-gold)]/5 -z-10 rounded-bl-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[linear-gradient(to_left,rgba(245,158,11,0.03)_1px,transparent_1px)] bg-[size:1rem_1rem] -z-10 [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)] border-r border-[var(--color-brand-gold)]/20" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">

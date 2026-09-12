@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${inter.variable} ${notoKufi.variable} antialiased bg-white text-[#0F172A]`}>
+      <body className={`${inter.variable} ${notoKufi.variable} antialiased bg-[#0B192C] text-slate-300`}>
         {children}
       </body>
     </html>

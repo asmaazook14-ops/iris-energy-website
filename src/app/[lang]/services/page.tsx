@@ -255,8 +255,7 @@ export default async function Services(
       ========================================================= */}
       <section className="relative overflow-hidden bg-white/5">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/5/70 blur-3xl" />
-          <div className="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-[var(--color-brand-blue)]/10 blur-3xl" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-[linear-gradient(to_left,rgba(37,99,235,0.05)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)] border-r border-[var(--color-brand-blue)]/20" />
         </div>
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">

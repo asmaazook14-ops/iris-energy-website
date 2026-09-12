@@ -95,33 +95,40 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
         {/* Product Ranges */}
         <div className="grid md:grid-cols-3 gap-8 mb-24">
           {categories.map((cat, idx) => (
-            <div key={idx} className="bg-[var(--color-brand-light)] border border-[var(--color-brand-gray)] rounded-xl overflow-hidden shadow-sm flex flex-col">
-              <div className="img-container-standard">
+            <div key={idx} className="bg-[#122238] border border-white/10 hover:border-[var(--color-brand-blue)]/40 transition-colors duration-300 rounded-xl overflow-hidden shadow-xl flex flex-col group relative">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--color-brand-blue)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="img-container-standard border-b border-white/10 relative">
+                <div className="absolute inset-0 bg-[#0B192C]/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
                 <Image
                   src={idx === 0 ? '/images/Products/product-iris-pool-heat-pump.webp' : (idx === 1 ? '/images/Projects/project-multi-unit-heat-pump-system.webp' : '/images/Products/product-showroom-unit.webp')}
                   alt={cat.title}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-8 flex-grow">
-                <h2 className="text-2xl font-bold text-white mb-6 border-b border-[var(--color-brand-gray)] pb-4">{cat.title}</h2>
+              <div className="p-8 flex-grow flex flex-col relative bg-[#122238]">
+                <h2 className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4 flex items-center justify-between">
+                  {cat.title}
+                  <span className="text-[10px] uppercase tracking-widest text-[var(--color-brand-blue)] font-mono border border-[var(--color-brand-blue)]/30 px-2 py-1 rounded bg-[#0B192C]">
+                    Series
+                  </span>
+                </h2>
                 <ul className="space-y-4 text-slate-300">
-                  <li className="flex justify-between items-center">
-                    <span className="font-semibold">{lang === 'en' ? 'Range' : 'الموديلات'}:</span>
-                    <span>{cat.models}</span>
+                  <li className="flex justify-between items-center border-b border-white/5 pb-2">
+                    <span className="text-sm">{lang === 'en' ? 'Range' : 'الموديلات'}:</span>
+                    <span className="font-mono text-[var(--color-brand-gold)] font-medium">{cat.models}</span>
+                  </li>
+                  <li className="flex justify-between items-center border-b border-white/5 pb-2">
+                    <span className="text-sm">{lang === 'en' ? 'Capacity' : 'القدرة'}:</span>
+                    <span className="font-mono text-white font-medium">{cat.capacity}</span>
+                  </li>
+                  <li className="flex justify-between items-center border-b border-white/5 pb-2">
+                    <span className="text-sm">{lang === 'en' ? 'Models' : 'عدد الموديلات'}:</span>
+                    <span className="font-mono text-white font-medium">{cat.count}</span>
                   </li>
                   <li className="flex justify-between items-center">
-                    <span className="font-semibold">{lang === 'en' ? 'Capacity' : 'القدرة'}:</span>
-                    <span>{cat.capacity}</span>
-                  </li>
-                  <li className="flex justify-between items-center">
-                    <span className="font-semibold">{lang === 'en' ? 'Models' : 'عدد الموديلات'}:</span>
-                    <span>{cat.count}</span>
-                  </li>
-                  <li className="flex justify-between items-center">
-                    <span className="font-semibold">{lang === 'en' ? 'Technology' : 'التكنولوجيا'}:</span>
-                    <span>{cat.tech}</span>
+                    <span className="text-sm">{lang === 'en' ? 'Technology' : 'التكنولوجيا'}:</span>
+                    <span className="text-sm font-semibold text-[var(--color-brand-blue)]">{cat.tech}</span>
                   </li>
                 </ul>
               </div>
@@ -146,7 +153,7 @@ export default async function Products(props: { params: Promise<{ lang: 'en' | '
                   <div className="sm:w-1/3 font-bold text-white mb-2 sm:mb-0">
                     {item.feature}
                   </div>
-                  <div className="sm:w-2/3 text-slate-300">
+                  <div className="sm:w-2/3 text-slate-300 font-mono text-sm">
                     {item.spec}
                   </div>
                 </div>

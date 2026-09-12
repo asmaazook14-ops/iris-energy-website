@@ -226,7 +226,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
 
       {/* 5. ENGINEERING PROCESS (How IRIS Executes) - Horizontal Flow */}
       <section className="py-32 relative border-b border-white/10 overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-[var(--color-brand-gold)]/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute right-0 top-0 w-1/3 h-full bg-[linear-gradient(to_left,rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,158,11,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)]" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
@@ -373,7 +373,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       {/* 8. FINAL CTA */}
       <section className="relative py-32 bg-transparent overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-brand-blue)]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 mix-blend-screen" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[var(--color-brand-blue)]/5 to-transparent border-t border-[var(--color-brand-blue)]/20" />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

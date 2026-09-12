@@ -235,7 +235,7 @@ export default async function EngineeringSolutionsPage(props: { params: Promise<
       <section className="py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto bg-gradient-to-br from-[#0B192C] to-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-brand-gold)]/10 rounded-full blur-[80px]" />
+            <div className="absolute top-0 right-0 w-64 h-full bg-[linear-gradient(to_left,rgba(245,158,11,0.05)_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)] border-r border-[var(--color-brand-gold)]/20" />
             <h3 className="text-3xl font-bold text-white mb-6 relative z-10">{isEn ? 'Understand Our Workflow' : 'افهم سير عملنا'}</h3>
             <p className="text-lg text-slate-300 mb-10 relative z-10">
               {isEn ? 'Discover how we take a project from early thermal assessment through to installation and after-sales support.' : 'اكتشف كيف نأخذ المشروع من التقييم الحراري المبكر إلى التركيب ودعم ما بعد البيع.'}
