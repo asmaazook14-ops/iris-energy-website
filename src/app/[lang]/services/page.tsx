@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   Wrench,
   BookOpen,
@@ -507,8 +508,8 @@ export default async function Services(
               </p>
 
               <div className="flex flex-wrap items-center gap-5">
-                <a
-                  href="/contact"
+                <Link
+                  href={`/${lang}/request-study`}
                   className="inline-flex items-center gap-3 px-7 py-4 rounded-lg bg-white/5 text-white font-bold hover:opacity-90 transition-opacity"
                 >
                   {content.ctaButton}
@@ -518,7 +519,7 @@ export default async function Services(
                       isArabic ? 'rotate-180' : ''
                     }`}
                   />
-                </a>
+                </Link>
 
                 <span className="text-sm text-white/55">
                   {content.contactNote}

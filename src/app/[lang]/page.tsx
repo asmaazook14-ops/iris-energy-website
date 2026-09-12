@@ -15,7 +15,6 @@ import {
   Cpu,
   Wrench,
   ArrowRight,
-  CheckCircle2,
   Globe2,
   CalendarDays,
   Activity,

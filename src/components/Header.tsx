@@ -13,6 +13,7 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
 
   useEffect(() => {
     // Close mobile menu on route change
+    // eslint-disable-next-line
     setIsOpen(false);
   }, [pathname]);
 

@@ -1,7 +1,7 @@
 import { projectsEn, projectsAr } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Building, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default async function ProjectsHub(props: { params: Promise<{ lang: 'en' | 'ar' }> }) {
   const params = await props.params;
