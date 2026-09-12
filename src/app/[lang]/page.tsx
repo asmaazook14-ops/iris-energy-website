@@ -80,7 +80,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         {/* Background Engineering Schematic Graphics */}
         <div className="absolute inset-0 z-0 bg-[#0B192C]">
           <Image
-            src="/images/Homepage/homepage-commercial-pool.webp"
+            src="/images/Homepage/figma-hero-bg.png"
             alt="IRIS Energy Commercial Pool Installation"
             fill
             className="object-cover"
@@ -105,10 +105,10 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             <div className="flex flex-col sm:flex-row gap-4">
               <HeroCTA primaryCtaText={dict.hero.primaryCta} lang={lang} />
               <Link
-                href={`/${lang}/solutions`}
-                className="inline-flex justify-center items-center px-8 py-4 border border-white/20 text-base font-bold rounded-md text-white bg-transparent hover:bg-[#122238] transition-all duration-200"
+                href={`/${lang}/request-study`}
+                className="inline-flex justify-center items-center px-8 py-4 border border-slate-200 text-base font-bold rounded-md text-white bg-[#f59e0b] hover:opacity-90 transition-all"
               >
-                {dict.hero.secondaryCta}
+                {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
               </Link>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
           <div className="grid lg:grid-cols-3 gap-16">
             <div className="lg:col-span-1">
               <div className="sticky top-32">
-                <h2 className="text-[var(--color-brand-blue)] font-bold tracking-wider uppercase text-sm mb-3">
+                <h2 className="text-[#8ec5ff] font-bold text-xs uppercase tracking-widest">
                   {isEn ? 'Target Applications' : 'التطبيقات المستهدفة'}
                 </h2>
                 <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">

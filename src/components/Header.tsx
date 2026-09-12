@@ -38,7 +38,7 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
           <div className="flex-shrink-0 flex items-center">
             <Link href={`/${lang}`} className="flex-shrink-0 flex items-center">
               <Image 
-                src="/logo.png" 
+                src="/figma-logo.png" 
                 alt="IRIS Energy Logo" 
                 width={150} 
                 height={51} 
