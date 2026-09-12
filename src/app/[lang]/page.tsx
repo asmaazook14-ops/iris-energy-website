@@ -59,10 +59,10 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
 
   // Verified Engineering Process (from /services)
   const engineeringProcess = [
-    { num: '01', title: isEn ? 'Project Study' : 'دراسة المشروع', icon: FileText },
-    { num: '02', title: isEn ? 'System Sizing' : 'تحديد الحجم', icon: Activity },
-    { num: '03', title: isEn ? 'Technical Advice' : 'نصيحة فنية', icon: HardHat },
-    { num: '04', title: isEn ? 'Installation' : 'التركيب', icon: Wrench }
+    { num: '1', title: isEn ? 'Early Stage Consultation' : 'الاستشارة المبدئية', desc: isEn ? 'Understanding project requirements from the beginning.' : 'فهم متطلبات المشروع من البداية.' },
+    { num: '2', title: isEn ? 'System Selection' : 'اختيار النظام', desc: isEn ? 'Identifying the optimal components and configuration.' : 'تحديد المكونات والتكوين الأمثل.' },
+    { num: '3', title: isEn ? 'Technical Studies' : 'الدراسات الفنية', desc: isEn ? 'Balancing performance, budget, and energy efficiency.' : 'موازنة الأداء والميزانية وكفاءة الطاقة.' },
+    { num: '4', title: isEn ? 'Installation & Support' : 'التركيب والدعم', desc: isEn ? 'Comprehensive setup and ongoing maintenance services.' : 'إعداد شامل وخدمات صيانة مستمرة.' }
   ];
 
   // Verified Products Data
@@ -76,7 +76,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
     <div className="bg-[#0B192C]">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center border-b border-white/10 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center border-b border-white overflow-hidden">
         {/* Background Engineering Schematic Graphics */}
         <div className="absolute inset-0 z-0 bg-[#0B192C]">
           <Image
@@ -116,7 +116,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* 2. VERIFIED TRUST METRICS */}
-      <section className="border-b border-white/10 bg-[#122238]">
+      <section className="border-b border-white bg-[#122238]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 divide-x divide-white/10 rtl:divide-x-reverse">
             <div className="text-center px-4">
@@ -144,7 +144,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* 3. SOLUTIONS (What IRIS Provides) */}
-      <section className="py-32 relative border-b border-white/10">
+      <section className="py-32 relative border-b border-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-2xl">
@@ -164,7 +164,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             {engineeringSolutions.map((sol, idx) => {
               const Icon = sol.icon;
               return (
-                <div key={idx} className="bg-[#122238] border border-white/10 p-8 rounded-2xl hover:border-[var(--color-brand-blue)]/50 transition-colors">
+                <div key={idx} className="bg-[#122238] border border-white p-8 rounded-2xl hover:border-[var(--color-brand-blue)]/50 transition-colors">
                   <Icon className="w-8 h-8 text-[var(--color-brand-blue)] mb-6" />
                   <h4 className="text-xl font-bold text-white mb-3">{sol.title}</h4>
                   <p className="text-slate-300 leading-relaxed">{sol.desc}</p>
@@ -176,7 +176,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* 4. APPLICATIONS (Where IRIS is Used) - Vertical List Layout */}
-      <section className="py-32 relative border-b border-white/10 bg-[#122238]">
+      <section className="py-32 relative border-b border-white bg-[#122238]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-16">
             <div className="lg:col-span-1">
@@ -202,7 +202,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
               {applications.map((app, idx) => {
                 const Icon = app.icon;
                 return (
-                  <Link href={`/${lang}/solutions`} key={idx} className="group block bg-[#0B192C] p-6 md:p-8 rounded-2xl border border-white/10 hover:border-[var(--color-brand-blue)]/50 transition-all">
+                  <Link href={`/${lang}/solutions`} key={idx} className="group block bg-[#0B192C] p-6 md:p-8 rounded-2xl border border-white hover:border-[var(--color-brand-blue)]/50 transition-all">
                     <div className="flex flex-col md:flex-row md:items-center gap-6">
                       <div className="w-16 h-16 bg-[#122238] rounded-xl flex items-center justify-center shrink-0 border border-white/5 group-hover:bg-[var(--color-brand-blue)]/10 group-hover:border-[var(--color-brand-blue)]/30 transition-colors">
                         <Icon className="w-8 h-8 text-white opacity-70 group-hover:opacity-100 group-hover:text-[var(--color-brand-blue)] transition-colors" />
@@ -224,7 +224,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* 5. ENGINEERING PROCESS (How IRIS Executes) - Horizontal Flow */}
-      <section className="py-32 relative border-b border-white/10 overflow-hidden">
+      <section className="py-32 relative border-b border-white overflow-hidden">
         <div className="absolute right-0 top-0 w-1/3 h-full bg-[linear-gradient(to_left,rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,158,11,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)]" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -236,19 +236,17 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             </h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16 relative">
-            {/* Connecting Line Desktop */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-white/20 z-0" />
-            
+          <div className="flex flex-col gap-6 max-w-3xl mx-auto mb-16 relative">
             {engineeringProcess.map((step, idx) => {
-              const Icon = step.icon;
               return (
-                <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
-                  <div className="w-24 h-24 rounded-full bg-[#0B192C] border-2 border-white/10 group-hover:border-[var(--color-brand-gold)] flex items-center justify-center mb-6 transition-colors shadow-xl">
-                    <Icon className="w-8 h-8 text-white group-hover:text-[var(--color-brand-gold)] transition-colors" />
+                <div key={idx} className="flex flex-row items-center gap-6 bg-[#0B192C] p-6 rounded-xl border border-white group hover:border-[var(--color-brand-gold)] transition-colors">
+                  <div className="flex items-center justify-center px-6 py-3 rounded-md bg-[#f59e0b]">
+                    <span className="text-3xl font-bold text-[#0f172a]">{step.num}</span>
                   </div>
-                  <span className="text-[var(--color-brand-gold)] font-mono text-xs tracking-widest mb-3">STEP {step.num}</span>
-                  <h4 className="text-xl font-bold text-white">{step.title}</h4>
+                  <div className="flex flex-col gap-2">
+                    <h4 className="text-xl font-bold text-white">{step.title}</h4>
+                    <p className="text-slate-400">{step.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -263,7 +261,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* 6. PRODUCTS (What IRIS Offers) - Stacked Horizontal Rows */}
-      <section className="py-32 relative border-b border-white/10 bg-[#122238]">
+      <section className="py-32 relative border-b border-white bg-[#122238]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-[var(--color-brand-blue)] font-bold tracking-wider uppercase text-sm mb-3">
@@ -276,20 +274,20 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
           
           <div className="max-w-5xl mx-auto space-y-4">
             {productCategories.map((prod, idx) => (
-              <Link href={`/${lang}/products`} key={idx} className="flex flex-col md:flex-row md:items-center justify-between bg-[#0B192C] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-[var(--color-brand-blue)]/50 transition-all group">
+              <Link href={`/${lang}/products`} key={idx} className="flex flex-col md:flex-row md:items-center justify-between bg-[#0B192C] border border-white rounded-2xl p-6 md:p-8 hover:border-[var(--color-brand-blue)]/50 transition-all group">
                 <div className="flex items-center gap-6 mb-4 md:mb-0">
                   <div className="w-16 h-16 bg-[#122238] rounded-xl flex items-center justify-center shrink-0 border border-white/5">
                     <ThermometerSnowflake className="w-8 h-8 text-white opacity-70 group-hover:opacity-100 group-hover:text-[var(--color-brand-blue)] transition-colors" />
                   </div>
                   <div>
                     <h4 className="text-2xl font-bold text-white mb-2">{prod.title}</h4>
-                    <span className="inline-block px-3 py-1 bg-[#122238] border border-white/10 rounded-full text-xs font-medium text-slate-300">
+                    <span className="inline-block px-3 py-1 bg-[#122238] border border-white rounded-full text-xs font-medium text-slate-300">
                       {prod.tech}
                     </span>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between md:justify-end gap-8 border-t border-white/10 md:border-none pt-4 md:pt-0">
+                <div className="flex items-center justify-between md:justify-end gap-8 border-t border-white md:border-none pt-4 md:pt-0">
                   <div className="text-right rtl:text-left">
                     <div className="text-sm text-slate-400 mb-1">{isEn ? 'Capacity' : 'السعة'}</div>
                     <div className="text-[var(--color-brand-blue)] font-mono font-bold text-xl">{prod.capacity}</div>
@@ -305,7 +303,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
       {/* 7. PROJECTS (What IRIS Has Delivered) - Asymmetrical Layout */}
-      <section className="relative py-32 bg-transparent text-white overflow-hidden border-b border-white/10">
+      <section className="relative py-32 bg-transparent text-white overflow-hidden border-b border-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
@@ -328,7 +326,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Large Featured Project */}
             {projects[0] && (
-              <Link href={`/${lang}/projects`} className="group relative h-[400px] lg:h-[600px] lg:col-span-2 rounded-3xl overflow-hidden border border-white/10">
+              <Link href={`/${lang}/projects`} className="group relative h-[400px] lg:h-[600px] lg:col-span-2 rounded-3xl overflow-hidden border border-white">
                 <Image
                   src={projects[0].src}
                   alt={projects[0].title}
@@ -348,7 +346,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             {/* Two Smaller Projects Stacked */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 lg:h-[600px]">
               {projects.slice(1, 3).map((project, idx) => (
-                <Link href={`/${lang}/projects`} key={idx} className="group relative h-[300px] lg:h-[calc(300px-12px)] rounded-3xl overflow-hidden border border-white/10">
+                <Link href={`/${lang}/projects`} key={idx} className="group relative h-[300px] lg:h-[calc(300px-12px)] rounded-3xl overflow-hidden border border-white">
                   <Image
                     src={project.src}
                     alt={project.title}
@@ -376,7 +374,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-[#122238] backdrop-blur-md rounded-3xl p-12 md:p-20 text-center shadow-2xl relative overflow-hidden border border-white/10">
+          <div className="bg-[#122238] backdrop-blur-md rounded-3xl p-12 md:p-20 text-center shadow-2xl relative overflow-hidden border border-white">
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 {isEn ? 'Ready to Optimize Your Energy Use?' : 'هل أنت مستعد لتحسين استخدامك للطاقة؟'}
