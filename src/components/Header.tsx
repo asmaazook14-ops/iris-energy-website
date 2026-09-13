@@ -24,21 +24,22 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
   };
 
   const primaryLinks = [
+    { href: '', label: isEn ? 'Home' : 'الرئيسية' },
     { href: '/solutions', label: isEn ? 'Solutions' : 'الحلول' },
     { href: '/products', label: isEn ? 'Products' : 'المنتجات' },
     { href: '/projects', label: isEn ? 'Projects' : 'المشاريع' },
-    { href: '/services', label: isEn ? 'Engineering Process' : 'العملية الهندسية' },
+    { href: '/services', label: isEn ? 'Services' : 'الخدمات' },
     { href: '/about', label: isEn ? 'About' : 'من نحن' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0B192C] backdrop-blur-lg border-b border-white/10 shadow-lg">
+    <header className="sticky top-0 z-50 w-full bg-white backdrop-blur-lg border-b border-slate-200 shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link href={`/${lang}`} className="flex-shrink-0 flex items-center">
               <Image 
-                src="/figma-logo.png" 
+                src="/iris-logo-new.png" 
                 alt="IRIS Energy Logo" 
                 width={150} 
                 height={51} 
@@ -53,7 +54,7 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
               <Link 
                 key={link.href}
                 href={`/${lang}${link.href}`}
-                className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                className="text-sm font-semibold text-slate-700 hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 {link.label}
               </Link>
@@ -63,7 +64,7 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
           <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
             <Link 
               href={toggleLang()}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors uppercase tracking-wider"
+              className="text-sm font-medium text-slate-700 hover:text-[var(--color-brand-blue)] transition-colors uppercase tracking-wider"
             >
               {isEn ? 'عربي' : 'EN'}
             </Link>
@@ -79,13 +80,13 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
           <div className="flex items-center lg:hidden">
             <Link 
               href={toggleLang()}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors uppercase tracking-wider mr-4 rtl:mr-0 rtl:ml-4"
+              className="text-sm font-medium text-slate-700 hover:text-[var(--color-brand-blue)] transition-colors uppercase tracking-wider mr-4 rtl:mr-0 rtl:ml-4"
             >
               {isEn ? 'عربي' : 'EN'}
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-white/5 focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-[var(--color-brand-blue)] hover:bg-slate-100 focus:outline-none transition-colors"
               aria-expanded={isOpen}
             >
               <span className="sr-only">{isEn ? 'Open main menu' : 'فتح القائمة الرئيسية'}</span>
@@ -101,18 +102,18 @@ export function Header({ lang }: { lang: 'en' | 'ar' }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#0B192C] border-b border-white/10 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)]">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)]">
           <div className="px-4 pt-4 pb-6 space-y-4">
             {primaryLinks.map((link) => (
               <Link
                 key={link.href}
                 href={`/${lang}${link.href}`}
-                className="block px-3 py-3 rounded-md text-base font-bold text-white hover:bg-white/5 transition-colors"
+                className="block px-3 py-3 rounded-md text-base font-bold text-slate-800 hover:bg-slate-100 hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-6 border-t border-white/10">
+            <div className="pt-6 border-t border-slate-200">
               <Link 
                 href={`/${lang}/request-study`}
                 className="w-full flex justify-center items-center px-4 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-[var(--color-brand-blue)] hover:bg-blue-700 transition-colors shadow-lg"

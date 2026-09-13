@@ -175,6 +175,71 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         </div>
       </section>
 
+      {/* 7. PROJECTS (What IRIS Has Delivered) - Asymmetrical Layout */}
+      <section className="relative py-32 bg-transparent text-white overflow-hidden border-b border-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
+                {isEn ? 'Our Portfolio' : 'معرض أعمالنا'}
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                {isEn ? 'Proven Project Experience' : 'خبرة مشاريع مثبتة'}
+              </h3>
+            </div>
+            <Link
+              href={`/${lang}/projects`}
+              className="inline-flex items-center text-[var(--color-brand-gold)] font-bold hover:text-yellow-400 whitespace-nowrap text-lg"
+            >
+              {isEn ? 'View All Projects' : 'عرض جميع المشاريع'} <ArrowRight className={`w-5 h-5 ${isEn ? 'ml-2' : 'mr-2 rtl:rotate-180'}`} />
+            </Link>
+          </div>
+
+          {/* Asymmetrical Grid: 1 large, 2 small stacked */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Large Featured Project */}
+            {projects[0] && (
+              <Link href={`/${lang}/projects`} className="group relative h-[400px] lg:h-[600px] lg:col-span-2 rounded-3xl overflow-hidden border border-white">
+                <Image
+                  src={projects[0].src}
+                  alt={projects[0].title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C] via-[#0B192C]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                  <h4 className="text-3xl font-bold text-white mb-2">{projects[0].title}</h4>
+                  <p className="text-[var(--color-brand-gold)] font-bold text-lg flex items-center">
+                    {projects[0].location}
+                  </p>
+                </div>
+              </Link>
+            )}
+
+            {/* Two Smaller Projects Stacked */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 lg:h-[600px]">
+              {projects.slice(1, 3).map((project, idx) => (
+                <Link href={`/${lang}/projects`} key={idx} className="group relative h-[300px] lg:h-[calc(300px-12px)] rounded-3xl overflow-hidden border border-white">
+                  <Image
+                    src={project.src}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C] via-[#0B192C]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <h4 className="text-2xl font-bold text-white mb-2">{project.title}</h4>
+                    <p className="text-[var(--color-brand-gold)] font-bold flex items-center">
+                      {project.location}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. APPLICATIONS (Where IRIS is Used) - Vertical List Layout */}
       <section className="py-32 relative border-b border-white bg-[#122238]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -302,70 +367,6 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         </div>
       </section>
 
-      {/* 7. PROJECTS (What IRIS Has Delivered) - Asymmetrical Layout */}
-      <section className="relative py-32 bg-transparent text-white overflow-hidden border-b border-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
-                {isEn ? 'Our Portfolio' : 'معرض أعمالنا'}
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                {isEn ? 'Proven Project Experience' : 'خبرة مشاريع مثبتة'}
-              </h3>
-            </div>
-            <Link
-              href={`/${lang}/projects`}
-              className="inline-flex items-center text-[var(--color-brand-gold)] font-bold hover:text-yellow-400 whitespace-nowrap text-lg"
-            >
-              {isEn ? 'View All Projects' : 'عرض جميع المشاريع'} <ArrowRight className={`w-5 h-5 ${isEn ? 'ml-2' : 'mr-2 rtl:rotate-180'}`} />
-            </Link>
-          </div>
-
-          {/* Asymmetrical Grid: 1 large, 2 small stacked */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Large Featured Project */}
-            {projects[0] && (
-              <Link href={`/${lang}/projects`} className="group relative h-[400px] lg:h-[600px] lg:col-span-2 rounded-3xl overflow-hidden border border-white">
-                <Image
-                  src={projects[0].src}
-                  alt={projects[0].title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C] via-[#0B192C]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-                  <h4 className="text-3xl font-bold text-white mb-2">{projects[0].title}</h4>
-                  <p className="text-[var(--color-brand-gold)] font-bold text-lg flex items-center">
-                    {projects[0].location}
-                  </p>
-                </div>
-              </Link>
-            )}
-
-            {/* Two Smaller Projects Stacked */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 lg:h-[600px]">
-              {projects.slice(1, 3).map((project, idx) => (
-                <Link href={`/${lang}/projects`} key={idx} className="group relative h-[300px] lg:h-[calc(300px-12px)] rounded-3xl overflow-hidden border border-white">
-                  <Image
-                    src={project.src}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C] via-[#0B192C]/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h4 className="text-2xl font-bold text-white mb-2">{project.title}</h4>
-                    <p className="text-[var(--color-brand-gold)] font-bold flex items-center">
-                      {project.location}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 8. FINAL CTA */}
       <section className="relative py-32 bg-transparent overflow-hidden">
