@@ -2,6 +2,7 @@ import { getDictionary } from '@/dictionaries';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeroCTA from '@/components/HeroCTA';
+import PoolHeatingDemo from '@/components/PoolHeatingDemo';
 import {
   Droplets,
   Building2,
@@ -16,9 +17,7 @@ import {
   Wrench,
   ArrowRight,
   Globe2,
-  CalendarDays,
-  Activity,
-  FileText
+  CalendarDays
 } from 'lucide-react';
 
 export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' }> }) {
@@ -112,6 +111,26 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 1.5 INTERACTIVE POOL DEMO */}
+      <section className="py-24 border-b border-white bg-[#0B192C]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <PoolHeatingDemo 
+            lang={lang}
+            dictionary={{
+              title: isEn ? 'See How It Works' : 'شاهد كيف يعمل',
+              description: isEn ? 'Air-to-water heat pumps extract ambient heat and transfer it to your pool. Adjust the target temperature to see the system in action.' : 'تستخلص المضخات الحرارية هواء-ماء الحرارة المحيطة وتنقلها إلى حمام السباحة الخاص بك. اضبط درجة الحرارة المستهدفة لرؤية النظام أثناء العمل.',
+              poolTemp: isEn ? 'Pool Temperature' : 'درجة حرارة المسبح',
+              targetTemp: isEn ? 'Target Temperature' : 'درجة الحرارة المستهدفة',
+              status: isEn ? 'System Status' : 'حالة النظام',
+              statusIdle: isEn ? 'Idle' : 'خامل',
+              statusHeating: isEn ? 'Heating' : 'تسخين',
+              statusReached: isEn ? 'Target Reached ✓' : 'تم الوصول للهدف ✓',
+              cop: isEn ? 'COP (Efficiency)' : 'معامل الأداء (COP)'
+            }}
+          />
         </div>
       </section>
 
