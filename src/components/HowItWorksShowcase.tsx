@@ -1,12 +1,10 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Wind, Thermometer, Droplets, Info } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 import './how-it-works.css';
-import clsx from 'clsx';
 
 interface HowItWorksShowcaseProps {
   lang: 'en' | 'ar';
@@ -45,41 +43,8 @@ interface HowItWorksShowcaseProps {
 }
 
 export default function HowItWorksShowcase({ lang, dictionary, media }: HowItWorksShowcaseProps) {
-  const [activeBadge, setActiveBadge] = useState<string | null>(null);
   const mediaRef = useRef(null);
   const isMediaInView = useInView(mediaRef, { once: true, margin: "200px" });
-
-  // Badge data mapped to absolute positions based on the specific photo
-  // 'homepage-residential-pool-heat-pump.webp' layout: pump is on left/center-left, pool is background right.
-  const badges = [
-    {
-      id: 'fan',
-      icon: Wind,
-      label: dictionary.badges.fan.label,
-      desc: dictionary.badges.fan.desc,
-      top: '30%',
-      left: '35%',
-      color: 'bg-[var(--color-brand-blue)]'
-    },
-    {
-      id: 'output',
-      icon: Thermometer,
-      label: dictionary.badges.output.label,
-      desc: dictionary.badges.output.desc,
-      top: '60%',
-      left: '45%',
-      color: 'bg-[var(--color-brand-gold)]'
-    },
-    {
-      id: 'pool',
-      icon: Droplets,
-      label: dictionary.badges.pool.label,
-      desc: dictionary.badges.pool.desc,
-      top: '25%',
-      left: '75%',
-      color: 'bg-cyan-500'
-    }
-  ];
 
   return (
     <div className="w-full">
@@ -131,55 +96,6 @@ export default function HowItWorksShowcase({ lang, dictionary, media }: HowItWor
             {/* Warm Glow: positioned near the center-left where the heat pump sits */}
             <div className="absolute top-1/4 left-1/4 w-64 h-64 -ml-32 animate-warm-pulse pointer-events-none rounded-full blur-3xl" />
 
-            {/* Phase 3: Interactive Callout Badges */}
-            {badges.map((badge) => {
-              const Icon = badge.icon;
-              const isActive = activeBadge === badge.id;
-              
-              return (
-                <div 
-                  key={badge.id}
-                  className="absolute z-20"
-                  style={{ top: badge.top, [lang === 'ar' ? 'right' : 'left']: badge.left }}
-                  onMouseEnter={() => setActiveBadge(badge.id)}
-                  onMouseLeave={() => setActiveBadge(null)}
-                  onClick={() => setActiveBadge(isActive ? null : badge.id)}
-                >
-                  {/* Badge Button */}
-                  <div className="relative flex items-center justify-center cursor-pointer -ml-4 -mt-4">
-                    <div className={clsx("absolute inset-0 rounded-full animate-ping opacity-30", badge.color)} />
-                    <div className={clsx("relative w-8 h-8 rounded-full flex items-center justify-center text-white shadow-lg border border-white/20 transition-transform", badge.color, isActive && "scale-110")}>
-                      <Icon size={16} />
-                    </div>
-                  </div>
-
-                  {/* Tooltip Info Card */}
-                  <AnimatePresence>
-                    {isActive && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className={clsx(
-                          "absolute top-10 w-48 bg-[#0F172A]/90 backdrop-blur-md border border-white/10 rounded-xl p-3 shadow-2xl z-30 pointer-events-none",
-                          // Anchor card slightly offset to avoid clipping
-                          "-left-20 rtl:-right-20 rtl:left-auto"
-                        )}
-                      >
-                        <div className="flex items-center gap-2 mb-1">
-                          <Info size={14} className="text-[var(--color-brand-gold)]" />
-                          <span className="font-bold text-white text-sm">{badge.label}</span>
-                        </div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
-                          {badge.desc}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
           </div>
 
           {/* Phase 3: Compact Data Strip */}
