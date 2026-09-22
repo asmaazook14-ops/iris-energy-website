@@ -2,7 +2,7 @@ import { getDictionary } from '@/dictionaries';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeroCTA from '@/components/HeroCTA';
-import PoolHeatingDemo from '@/components/PoolHeatingDemo';
+import HowItWorksShowcase from '@/components/HowItWorksShowcase';
 import {
   Droplets,
   Building2,
@@ -114,21 +114,64 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         </div>
       </section>
 
-      {/* 1.5 INTERACTIVE POOL DEMO */}
+      {/* 1.5 HOW IT WORKS SHOWCASE */}
       <section className="py-24 border-b border-white bg-[#0B192C]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <PoolHeatingDemo 
+          <HowItWorksShowcase 
             lang={lang}
             dictionary={{
-              title: isEn ? 'See How It Works' : 'شاهد كيف يعمل',
-              description: isEn ? 'Air-to-water heat pumps extract ambient heat and transfer it to your pool. Adjust the target temperature to see the system in action.' : 'تستخلص المضخات الحرارية هواء-ماء الحرارة المحيطة وتنقلها إلى حمام السباحة الخاص بك. اضبط درجة الحرارة المستهدفة لرؤية النظام أثناء العمل.',
-              poolTemp: isEn ? 'Pool Temperature' : 'درجة حرارة المسبح',
-              targetTemp: isEn ? 'Target Temperature' : 'درجة الحرارة المستهدفة',
-              status: isEn ? 'System Status' : 'حالة النظام',
-              statusIdle: isEn ? 'Idle' : 'خامل',
-              statusHeating: isEn ? 'Heating' : 'تسخين',
-              statusReached: isEn ? 'Target Reached ✓' : 'تم الوصول للهدف ✓',
-              cop: isEn ? 'COP (Efficiency)' : 'معامل الأداء (COP)'
+              sectionLabel: isEn ? 'See How It Works' : 'شاهد كيف يعمل',
+              headline: isEn ? 'How a Heat Pump Heats Your Pool' : 'كيف تقوم المضخة الحرارية بتدفئة حمام السباحة',
+              description: isEn 
+                ? 'Air-to-water heat pumps extract ambient heat from the air and efficiently transfer it to your pool water, requiring significantly less electricity than traditional heaters.' 
+                : 'تستخلص المضخات الحرارية هواء-ماء الحرارة المحيطة من الهواء وتنقلها بكفاءة إلى مياه حمام السباحة الخاص بك، مما يتطلب كهرباء أقل بكثير من السخانات التقليدية.',
+              steps: [
+                {
+                  number: '1',
+                  title: isEn ? 'Air Intake' : 'سحب الهواء',
+                  description: isEn ? 'The fan draws ambient air across the evaporator coil.' : 'تقوم المروحة بسحب الهواء المحيط عبر ملف المبخر.'
+                },
+                {
+                  number: '2',
+                  title: isEn ? 'Heat Transfer' : 'نقل الحرارة',
+                  description: isEn ? 'Refrigerant absorbs the heat, is compressed to increase temperature, and transfers it to the pool water via a titanium heat exchanger.' : 'يمتص سائل التبريد الحرارة، ويتم ضغطه لزيادة درجة الحرارة، ثم ينقلها إلى مياه المسبح عبر مبادل حراري من التيتانيوم.'
+                },
+                {
+                  number: '3',
+                  title: isEn ? 'Warm Water Returns' : 'عودة المياه الدافئة',
+                  description: isEn ? 'The heated water is circulated back into your pool, maintaining perfect comfort year-round.' : 'يتم تدوير المياه الساخنة مرة أخرى إلى حمام السباحة الخاص بك، مما يحافظ على الراحة التامة على مدار العام.'
+                }
+              ],
+              ctaText: isEn ? 'Request a Project Study' : 'طلب دراسة مشروع',
+              badges: {
+                fan: { 
+                  label: isEn ? 'Fan Unit' : 'وحدة المروحة', 
+                  desc: isEn ? 'Extracts free thermal energy from the ambient air.' : 'تستخلص الطاقة الحرارية المجانية من الهواء المحيط.' 
+                },
+                output: { 
+                  label: isEn ? 'Heat Exchanger' : 'المبادل الحراري', 
+                  desc: isEn ? 'Titanium exchanger safely transfers heat to pool water.' : 'مبادل تيتانيوم ينقل الحرارة بأمان إلى مياه المسبح.' 
+                },
+                pool: { 
+                  label: isEn ? 'Pool Water' : 'مياه المسبح', 
+                  desc: isEn ? 'Returns to the pool at your perfectly set target temperature.' : 'تعود إلى المسبح بدرجة الحرارة المستهدفة المحددة بدقة.' 
+                }
+              },
+              dataStrip: {
+                cop: isEn ? 'COP (Efficiency)' : 'معامل الأداء (COP)',
+                copValue: '5.8',
+                temp: isEn ? 'Temp Increase' : 'زيادة الحرارة',
+                tempValue: '18→28°C',
+                rating: isEn ? 'Class' : 'الفئة',
+                ratingValue: 'A+++',
+                energy: isEn ? 'Savings' : 'التوفير',
+                energyValue: 'Up to 70%'
+              }
+            }}
+            media={{
+              type: 'image',
+              src: '/images/Homepage/homepage-residential-pool-heat-pump.webp',
+              alt: isEn ? 'IRIS Pool Heat Pump Installation' : 'تركيب مضخة حرارية لمسبح IRIS'
             }}
           />
         </div>
