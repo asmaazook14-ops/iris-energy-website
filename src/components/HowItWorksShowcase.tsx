@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Wind, Thermometer, Droplets, Info } from 'lucide-react';
 import './how-it-works.css';
 import clsx from 'clsx';
@@ -46,6 +46,8 @@ interface HowItWorksShowcaseProps {
 
 export default function HowItWorksShowcase({ lang, dictionary, media }: HowItWorksShowcaseProps) {
   const [activeBadge, setActiveBadge] = useState<string | null>(null);
+  const mediaRef = useRef(null);
+  const isMediaInView = useInView(mediaRef, { once: true, margin: "200px" });
 
   // Badge data mapped to absolute positions based on the specific photo
   // 'homepage-residential-pool-heat-pump.webp' layout: pump is on left/center-left, pool is background right.
@@ -96,16 +98,17 @@ export default function HowItWorksShowcase({ lang, dictionary, media }: HowItWor
       <div className="flex flex-col lg:flex-row gap-12 lg:items-start">
         {/* Media Section */}
         <div className="lg:w-2/3 flex flex-col gap-6">
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-[16/9] bg-slate-900 group">
+          <div ref={mediaRef} className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-[16/9] bg-slate-900 group">
             <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
               {media.type === 'video' ? (
                 <video 
-                  src={media.src}
+                  src={isMediaInView ? media.src : undefined}
                   poster={media.poster}
                   autoPlay
                   muted
                   loop
                   playsInline
+                  preload="none"
                   className="w-full h-full object-cover"
                   aria-label={media.alt}
                 />
@@ -114,6 +117,7 @@ export default function HowItWorksShowcase({ lang, dictionary, media }: HowItWor
                   src={media.src}
                   alt={media.alt}
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                 />

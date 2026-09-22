@@ -169,9 +169,10 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
               }
             }}
             media={{
-              type: 'image',
-              src: '/images/Homepage/homepage-residential-pool-heat-pump.webp',
-              alt: isEn ? 'IRIS Pool Heat Pump Installation' : 'تركيب مضخة حرارية لمسبح IRIS'
+              type: 'video',
+              src: '/videos/pool-heat-pump.mp4',
+              poster: '/images/Homepage/homepage-residential-pool-heat-pump.webp',
+              alt: isEn ? 'IRIS Pool Heat Pump Installation in Action' : 'عمل مضخة حرارية لمسبح IRIS'
             }}
           />
         </div>
