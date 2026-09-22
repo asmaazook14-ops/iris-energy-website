@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HeroCTA from '@/components/HeroCTA';
 import HowItWorksShowcase from '@/components/HowItWorksShowcase';
+import { AnimatedFeatureCard, AnimatedIconBox } from '@/components/AnimatedFeatureCard';
 import {
   Droplets,
   Building2,
@@ -223,15 +224,17 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             </Link>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {engineeringSolutions.map((sol, idx) => {
               const Icon = sol.icon;
               return (
-                <div key={idx} className="bg-[#122238] border border-white p-8 rounded-2xl hover:border-[var(--color-brand-blue)]/50 transition-colors">
-                  <Icon className="w-8 h-8 text-[var(--color-brand-blue)] mb-6" />
+                <AnimatedFeatureCard key={idx} idx={idx}>
+                  <AnimatedIconBox idx={idx}>
+                    <Icon className="w-6 h-6 text-[var(--color-brand-blue)]" />
+                  </AnimatedIconBox>
                   <h4 className="text-xl font-bold text-white mb-3">{sol.title}</h4>
-                  <p className="text-slate-300 leading-relaxed">{sol.desc}</p>
-                </div>
+                  <p className="text-slate-400 leading-relaxed">{sol.desc}</p>
+                </AnimatedFeatureCard>
               );
             })}
           </div>
