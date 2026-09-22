@@ -359,7 +359,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         <div className="absolute right-0 top-0 w-1/3 h-full bg-[linear-gradient(to_left,rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,158,11,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)]" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
+            <h2 className="text-[#2563EB] font-bold tracking-wider uppercase text-sm mb-3">
               {isEn ? 'Engineering Process' : 'العملية الهندسية'}
             </h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -367,20 +367,36 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             </h3>
           </div>
           
-          <div className="flex flex-col gap-6 max-w-3xl mx-auto mb-16 relative">
-            {engineeringProcess.map((step, idx) => {
-              return (
-                <div key={idx} className="flex flex-row items-center gap-6 bg-[#0B192C] p-6 rounded-xl border border-white group hover:border-[var(--color-brand-gold)] transition-colors">
-                  <div className="flex items-center justify-center px-6 py-3 rounded-md bg-[#f59e0b]">
-                    <span className="text-3xl font-bold text-[#0f172a]">{step.num}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative mt-16 mb-16">
+            {/* Glowing background track for lg screens */}
+            <div className="hidden lg:block absolute top-1/2 left-12 right-12 h-2 bg-gradient-to-r from-transparent via-[var(--color-brand-blue)]/10 to-transparent -translate-y-1/2 blur-lg" />
+            <div className="hidden lg:block absolute top-1/2 left-12 right-12 h-px bg-gradient-to-r from-transparent via-[var(--color-brand-gold)]/30 to-transparent -translate-y-1/2" />
+
+            {engineeringProcess.map((step, idx) => (
+              <div key={idx} className="relative group">
+                <div className="bg-gradient-to-b from-[#122238] to-[#0B192C] border border-white/5 rounded-3xl p-8 h-full flex flex-col relative z-10 hover:border-[var(--color-brand-gold)]/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.05)] transition-all duration-500 overflow-hidden">
+                  
+                  {/* Giant transparent number in background */}
+                  <div className="absolute -right-4 -bottom-8 text-[12rem] font-black text-white/[0.02] group-hover:text-[var(--color-brand-gold)]/[0.04] transition-colors duration-700 pointer-events-none select-none leading-none">
+                    {step.num}
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <h4 className="text-xl font-bold text-white">{step.title}</h4>
-                    <p className="text-slate-400">{step.desc}</p>
+
+                  <div className="w-14 h-14 rounded-full bg-[var(--color-brand-gold)]/5 border border-[var(--color-brand-gold)]/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-brand-gold)] transition-all duration-500 shadow-inner">
+                    <span className="text-xl font-bold text-[var(--color-brand-gold)] group-hover:text-[#0B192C] transition-colors">{step.num}</span>
                   </div>
+                  
+                  <h4 className="text-xl font-bold text-white mb-3 group-hover:text-[var(--color-brand-gold)] transition-colors">{step.title}</h4>
+                  <p className="text-slate-400 leading-relaxed text-sm relative z-10">{step.desc}</p>
                 </div>
-              );
-            })}
+                
+                {/* Connecting Arrow for lg screens */}
+                {idx < 3 && (
+                  <div className="hidden lg:flex absolute top-1/2 -right-5 w-10 h-10 items-center justify-center z-20 text-[var(--color-brand-gold)]/40 -translate-y-1/2 rtl:right-auto rtl:-left-5 rtl:rotate-180 bg-[#0B192C] rounded-full">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
           
           <div className="text-center">
