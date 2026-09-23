@@ -5,10 +5,12 @@ import { motion } from 'framer-motion';
 
 export function AnimatedFeatureCard({ 
   children, 
-  idx 
+  idx,
+  className
 }: { 
   children: React.ReactNode;
   idx: number;
+  className?: string;
 }) {
   return (
     <motion.div 
@@ -16,7 +18,7 @@ export function AnimatedFeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ type: 'spring', stiffness: 50, damping: 20, delay: idx * 0.1 }}
-      className="flex flex-col cursor-default relative group"
+      className={className || "flex flex-col cursor-default relative group"}
     >
       {/* Subtle border to separate items on larger screens */}
       {idx > 0 && (
@@ -29,13 +31,15 @@ export function AnimatedFeatureCard({
 
 export function AnimatedIconBox({ 
   children, 
-  idx 
+  idx,
+  className
 }: { 
   children: React.ReactNode;
   idx: number;
+  className?: string;
 }) {
   return (
-    <div className="relative w-14 h-14 mb-6">
+    <div className={`relative w-14 h-14 ${className || "mb-6"}`}>
       {/* Organic shimmer background behind icon */}
       <motion.div 
         animate={{ rotate: 360 }}

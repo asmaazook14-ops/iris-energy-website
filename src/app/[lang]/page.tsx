@@ -207,40 +207,6 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         </div>
       </section>
 
-      {/* 3. SOLUTIONS (What IRIS Provides) */}
-      <section className="py-32 relative border-b border-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
-                {isEn ? 'Our Engineering Solutions' : 'حلولنا الهندسية'}
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                {isEn ? 'What We Provide' : 'ماذا نقدم'}
-              </h3>
-            </div>
-            <Link href={`/${lang}/solutions`} className="inline-flex items-center text-[var(--color-brand-blue)] font-bold hover:text-blue-400 whitespace-nowrap">
-              {isEn ? 'Explore All Solutions' : 'استكشف جميع الحلول'} <ArrowRight className={`w-5 h-5 ${isEn ? 'ml-2' : 'mr-2 rtl:rotate-180'}`} />
-            </Link>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {engineeringSolutions.map((sol, idx) => {
-              const Icon = sol.icon;
-              return (
-                <AnimatedFeatureCard key={idx} idx={idx}>
-                  <AnimatedIconBox idx={idx}>
-                    <Icon className="w-6 h-6 text-[var(--color-brand-blue)]" />
-                  </AnimatedIconBox>
-                  <h4 className="text-xl font-bold text-white mb-3">{sol.title}</h4>
-                  <p className="text-slate-400 leading-relaxed">{sol.desc}</p>
-                </AnimatedFeatureCard>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* 7. PROJECTS (What IRIS Has Delivered) - Asymmetrical Layout */}
       <section className="relative py-32 bg-transparent text-white overflow-hidden border-b border-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -354,59 +320,6 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
         </div>
       </section>
 
-      {/* 5. ENGINEERING PROCESS (How IRIS Executes) - Horizontal Flow */}
-      <section className="py-32 relative border-b border-white overflow-hidden">
-        <div className="absolute right-0 top-0 w-1/3 h-full bg-[linear-gradient(to_left,rgba(245,158,11,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,158,11,0.03)_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none [mask-image:linear-gradient(to_left,#000_10%,transparent_100%)]" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-[#2563EB] font-bold tracking-wider uppercase text-sm mb-3">
-              {isEn ? 'Engineering Process' : 'العملية الهندسية'}
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {isEn ? 'How We Execute Projects' : 'كيف ننفذ المشاريع'}
-            </h3>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative mt-16 mb-16">
-            {/* Glowing background track for lg screens */}
-            <div className="hidden lg:block absolute top-1/2 left-12 right-12 h-2 bg-gradient-to-r from-transparent via-[var(--color-brand-blue)]/10 to-transparent -translate-y-1/2 blur-lg" />
-            <div className="hidden lg:block absolute top-1/2 left-12 right-12 h-px bg-gradient-to-r from-transparent via-[var(--color-brand-gold)]/30 to-transparent -translate-y-1/2" />
-
-            {engineeringProcess.map((step, idx) => (
-              <div key={idx} className="relative group">
-                <div className="bg-gradient-to-b from-[#122238] to-[#0B192C] border border-white/5 rounded-3xl p-8 h-full flex flex-col relative z-10 hover:border-[var(--color-brand-gold)]/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.05)] transition-all duration-500 overflow-hidden">
-                  
-                  {/* Giant transparent number in background */}
-                  <div className="absolute -right-4 -bottom-8 text-[12rem] font-black text-white/[0.02] group-hover:text-[var(--color-brand-gold)]/[0.04] transition-colors duration-700 pointer-events-none select-none leading-none">
-                    {step.num}
-                  </div>
-
-                  <div className="w-14 h-14 rounded-full bg-[var(--color-brand-gold)]/5 border border-[var(--color-brand-gold)]/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[var(--color-brand-gold)] transition-all duration-500 shadow-inner">
-                    <span className="text-xl font-bold text-[var(--color-brand-gold)] group-hover:text-[#0B192C] transition-colors">{step.num}</span>
-                  </div>
-                  
-                  <h4 className="text-xl font-bold text-white mb-3 group-hover:text-[var(--color-brand-gold)] transition-colors">{step.title}</h4>
-                  <p className="text-slate-400 leading-relaxed text-sm relative z-10">{step.desc}</p>
-                </div>
-                
-                {/* Connecting Arrow for lg screens */}
-                {idx < 3 && (
-                  <div className="hidden lg:flex absolute top-1/2 -right-5 w-10 h-10 items-center justify-center z-20 text-[var(--color-brand-gold)]/40 -translate-y-1/2 rtl:right-auto rtl:-left-5 rtl:rotate-180 bg-[#0B192C] rounded-full">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link href={`/${lang}/services`} className="inline-flex items-center text-[var(--color-brand-gold)] font-bold hover:text-yellow-400 text-lg">
-              {isEn ? 'View Complete 7-Step Lifecycle' : 'عرض دورة الحياة الكاملة'} <ArrowRight className={`w-5 h-5 ${isEn ? 'ml-2' : 'mr-2 rtl:rotate-180'}`} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* 6. PRODUCTS (What IRIS Offers) - Stacked Horizontal Rows */}
       <section className="py-32 relative border-b border-white bg-[#122238]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -419,28 +332,28 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             </h3>
           </div>
           
-          <div className="max-w-5xl mx-auto space-y-4">
+          <div className="max-w-5xl mx-auto space-y-3 md:space-y-4">
             {productCategories.map((prod, idx) => (
-              <Link href={`/${lang}/products`} key={idx} className="flex flex-col md:flex-row md:items-center justify-between bg-[#0B192C] border border-white rounded-2xl p-6 md:p-8 hover:border-[var(--color-brand-blue)]/50 transition-all group">
-                <div className="flex items-center gap-6 mb-4 md:mb-0">
-                  <div className="w-16 h-16 bg-[#122238] rounded-xl flex items-center justify-center shrink-0 border border-white/5">
-                    <ThermometerSnowflake className="w-8 h-8 text-white opacity-70 group-hover:opacity-100 group-hover:text-[var(--color-brand-blue)] transition-colors" />
+              <Link href={`/${lang}/products`} key={idx} className="flex flex-row items-center justify-between bg-[#0B192C] border border-white rounded-xl p-4 md:p-8 hover:border-[var(--color-brand-blue)]/50 transition-all group">
+                <div className="flex items-center gap-4 md:gap-6">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-[#122238] rounded-xl flex items-center justify-center shrink-0 border border-white/5">
+                    <ThermometerSnowflake className="w-6 h-6 md:w-8 md:h-8 text-white opacity-70 group-hover:opacity-100 group-hover:text-[var(--color-brand-blue)] transition-colors" />
                   </div>
                   <div>
-                    <h4 className="text-2xl font-bold text-white mb-2">{prod.title}</h4>
-                    <span className="inline-block px-3 py-1 bg-[#122238] border border-white rounded-full text-xs font-medium text-slate-300">
+                    <h4 className="text-lg md:text-2xl font-bold text-white mb-1 md:mb-2">{prod.title}</h4>
+                    <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-[#122238] border border-white rounded-full text-[10px] md:text-xs font-medium text-slate-300">
                       {prod.tech}
                     </span>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between md:justify-end gap-8 border-t border-white md:border-none pt-4 md:pt-0">
+                <div className="flex items-center justify-end gap-4 md:gap-8">
                   <div className="text-right rtl:text-left">
-                    <div className="text-sm text-slate-400 mb-1">{isEn ? 'Capacity' : 'السعة'}</div>
-                    <div className="text-[var(--color-brand-blue)] font-mono font-bold text-xl">{prod.capacity}</div>
+                    <div className="text-[10px] md:text-sm text-slate-400 mb-0.5 md:mb-1">{isEn ? 'Capacity' : 'السعة'}</div>
+                    <div className="text-[var(--color-brand-blue)] font-mono font-bold text-sm md:text-xl">{prod.capacity}</div>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-[#122238] flex items-center justify-center group-hover:bg-[var(--color-brand-blue)] transition-colors shrink-0">
-                    <ArrowRight className={`w-5 h-5 text-white ${isEn ? '' : 'rtl:rotate-180'}`} />
+                  <div className="hidden sm:flex w-8 h-8 md:w-12 md:h-12 rounded-full bg-[#122238] items-center justify-center group-hover:bg-[var(--color-brand-blue)] transition-colors shrink-0">
+                    <ArrowRight className={`w-4 h-4 md:w-5 md:h-5 text-white ${isEn ? '' : 'rtl:rotate-180'}`} />
                   </div>
                 </div>
               </Link>
@@ -450,6 +363,43 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       </section>
 
 
+      {/* 3. SOLUTIONS (What IRIS Provides) */}
+      <section className="py-32 relative border-b border-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
+                {isEn ? 'Our Engineering Solutions' : 'حلولنا الهندسية'}
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                {isEn ? 'What We Provide' : 'ماذا نقدم'}
+              </h3>
+            </div>
+            <Link href={`/${lang}/solutions`} className="inline-flex items-center text-[var(--color-brand-blue)] font-bold hover:text-blue-400 whitespace-nowrap">
+              {isEn ? 'Explore All Solutions' : 'استكشف جميع الحلول'} <ArrowRight className={`w-5 h-5 ${isEn ? 'ml-2' : 'mr-2 rtl:rotate-180'}`} />
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
+            {engineeringSolutions.map((sol, idx) => {
+              const Icon = sol.icon;
+              return (
+                <AnimatedFeatureCard key={idx} idx={idx} className="flex flex-row md:flex-col gap-4 md:gap-0">
+                  <AnimatedIconBox idx={idx} className="shrink-0 mb-0 md:mb-6">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-[var(--color-brand-blue)]" />
+                  </AnimatedIconBox>
+                  <div>
+                    <h4 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-3">{sol.title}</h4>
+                    <p className="text-sm md:text-base text-slate-400 leading-relaxed">{sol.desc}</p>
+                  </div>
+                </AnimatedFeatureCard>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      
       {/* 8. FINAL CTA */}
       <section className="relative py-32 bg-transparent overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
