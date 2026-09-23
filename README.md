@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swimming Pool Heat Pump ROI Calculator — Streamlit Version
 
-## Getting Started
+The exact same calculations as the original notebook, but with an interactive
+interface: change values from the sidebar and the months table, then click one
+button instead of editing code.
 
-First, run the development server:
+## Running
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Make sure Python 3.10+ is installed.
+2. Open a terminal in this folder and install the dependencies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the app:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   streamlit run app.py
+   ```
 
-## Learn More
+4. Your browser will open automatically at `http://localhost:8501`.
 
-To learn more about Next.js, take a look at the following resources:
+## Important notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The `data/` folder (containing `heat_pumps.csv`, `energy_prices.csv`,
+  `constants.csv`) must stay next to `app.py` — don't move any file on its own.
+- The "Monthly average air temperature" table is editable: you can add or
+  remove months using the `+` / `-` controls in the table.
+- Any value you leave unset (such as the electricity price or the heat pump
+  price) falls back to the default from the `data/` files, using the same
+  logic as the original notebook.

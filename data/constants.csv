@@ -1,0 +1,24 @@
+constant_name,value,unit,source
+water_density,1000.0,kg_per_m3,ASHRAE Handbook of Fundamentals - standard water property tables
+water_density_imperial,62.4,lb_per_ft3,ASHRAE Handbook of Fundamentals - standard water property tables (used in EPA ENERGY STAR pool model)
+specific_heat_water,4186.0,J_per_kgC,Standard thermodynamic property of water (ASHRAE Fundamentals)
+specific_heat_water_imperial,1.0,BTU_per_lbF,Standard thermodynamic property of water (ASHRAE Fundamentals)
+stefan_boltzmann_si,5.670374419e-8,W_per_m2_K4,NIST CODATA physical constant
+stefan_boltzmann_imperial,1.714e-9,BTU_per_h_ft2_R4,Standard engineering value of Stefan-Boltzmann constant in Imperial units (used in EPA/ASHRAE radiation formula hrad=4*sigma*Tw^3)
+convection_coeff_a,0.5,BTU_per_h_ft2_F,"Duffie, J.A. and Beckman, W.A., Solar Engineering of Thermal Processes, 2nd ed. (1993), p.158 - hc = 0.5 + 0.235V"
+convection_coeff_b,0.235,BTU_per_h_ft2_F_per_mph,"Duffie, J.A. and Beckman, W.A., Solar Engineering of Thermal Processes, 2nd ed. (1993), p.158 - hc = 0.5 + 0.235V"
+evaporation_coeff_a,68.3,BTU_per_h_ft2,"EPA ENERGY STAR Swimming Pool Technical Reference (Aug 2023), Appendix A-1, evaporation formula q''evap=(68.3+32V)(Ppw-Pdp)*AF"
+evaporation_coeff_b,32.0,BTU_per_h_ft2_per_mph,"EPA ENERGY STAR Swimming Pool Technical Reference (Aug 2023), Appendix A-1"
+indoor_default_water_temp_f,80.0,degF,"ASHRAE Handbook-HVAC Applications (2007), p.4.6, used as default indoor pool water temperature in EPA ENERGY STAR pool model"
+indoor_default_air_temp_f,75.0,degF,"ASHRAE Handbook-HVAC Applications (2007) recommended 75-85 degF; EPA ENERGY STAR model selected 75 degF"
+indoor_default_rh_pct,65.0,percent,"ASHRAE Handbook-HVAC Applications (2007) recommends 50-60%; EPA ENERGY STAR model selected 65% based on sensitivity analysis"
+indoor_default_wind_speed_mph,0.0,mph,"EPA ENERGY STAR Swimming Pool Technical Reference (Aug 2023) - still air assumed for indoor pool evaporation calculation"
+cover_evaporation_reduction_min,0.50,fraction,U.S. Department of Energy - pool cover reduces heating costs by 50-70 percent (cited via multiple DOE-sourced industry summaries)
+cover_evaporation_reduction_max,0.70,fraction,U.S. Department of Energy - pool cover reduces heating costs by 50-70 percent (cited via multiple DOE-sourced industry summaries)
+evaporation_measured_correction_low_wind,0.72,fraction,"Smith, C.C., Lof, G., Jones, R. (1994), Measurement and Analysis of Evaporation from an Inactive Outdoor Swimming Pool, Solar Energy 53(1):3-10 - measured evaporation was 72% of ASHRAE-predicted value at near-zero wind"
+evaporation_measured_correction_high_wind,0.84,fraction,"Smith, C.C., Lof, G., Jones, R. (1994), Solar Energy 53(1):3-10 - measured evaporation was 84% of ASHRAE-predicted value at 2.2 m/s wind"
+psia_to_inhg,2.036,conversion_factor,Standard pressure unit conversion (1 psia = 2.036 inHg)
+btu_to_kwh,0.00029307107,conversion_factor,Standard energy unit conversion (SI/Imperial)
+m2_to_ft2,10.7639,conversion_factor,Standard area unit conversion
+mps_to_mph,2.23694,conversion_factor,Standard speed unit conversion
+c_to_f_scale,1.8,conversion_factor,Standard temperature scale conversion (F = C*1.8+32)
