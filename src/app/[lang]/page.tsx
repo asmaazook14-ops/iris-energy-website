@@ -1,6 +1,7 @@
 import { getDictionary } from '@/dictionaries';
 import Image from 'next/image';
 import Link from 'next/link';
+import SolutionsAccordion from '@/components/SolutionsAccordion';
 import HeroCTA from '@/components/HeroCTA';
 import HowItWorksShowcase from '@/components/HowItWorksShowcase';
 import { AnimatedFeatureCard, AnimatedIconBox } from '@/components/AnimatedFeatureCard';
@@ -380,21 +381,18 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
-            {engineeringSolutions.map((sol, idx) => {
-              const Icon = sol.icon;
-              return (
-                <AnimatedFeatureCard key={idx} idx={idx} className="flex flex-row md:flex-col gap-4 md:gap-0">
-                  <AnimatedIconBox idx={idx} className="shrink-0 mb-0 md:mb-6">
-                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-[var(--color-brand-blue)]" />
-                  </AnimatedIconBox>
-                  <div>
-                    <h4 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-3">{sol.title}</h4>
-                    <p className="text-sm md:text-base text-slate-400 leading-relaxed">{sol.desc}</p>
-                  </div>
-                </AnimatedFeatureCard>
-              );
-            })}
+          <div className="max-w-4xl mx-auto w-full">
+            <SolutionsAccordion 
+              items={engineeringSolutions.map(sol => {
+                const Icon = sol.icon;
+                return {
+                  title: sol.title,
+                  desc: sol.desc,
+                  icon: <Icon className="w-6 h-6 md:w-8 md:h-8" />
+                };
+              })} 
+              lang={lang} 
+            />
           </div>
         </div>
       </section>
