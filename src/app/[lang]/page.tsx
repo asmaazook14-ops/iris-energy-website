@@ -106,7 +106,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
               <HeroCTA primaryCtaText={dict.hero.primaryCta} lang={lang} />
               <Link
                 href={`/${lang}/request-study`}
-                className="inline-flex justify-center items-center px-8 py-4 border border-slate-200 text-base font-bold rounded-md text-white bg-[#f59e0b] hover:opacity-90 transition-all"
+                className="inline-flex justify-center items-center px-8 py-4 border border-slate-200 text-base font-bold rounded-md text-white bg-[#f59e0b] hover:opacity-90 transition-all w-full sm:w-auto"
               >
                 {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
               </Link>
@@ -182,7 +182,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       {/* 2. VERIFIED TRUST METRICS */}
       <section className="border-b border-white bg-[#122238]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 divide-x divide-white/10 rtl:divide-x-reverse">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 md:divide-x divide-white/10 rtl:divide-x-reverse">
             <div className="text-center px-4">
               <CalendarDays className="w-6 h-6 text-[var(--color-brand-gold)] mx-auto mb-3" />
               <h4 className="text-2xl font-bold text-white">2011</h4>
@@ -210,7 +210,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       {/* 3. SOLUTIONS (What IRIS Provides) */}
       <section className="py-32 relative border-b border-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div className="max-w-2xl">
               <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
                 {isEn ? 'Our Engineering Solutions' : 'حلولنا الهندسية'}
@@ -244,7 +244,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
       {/* 7. PROJECTS (What IRIS Has Delivered) - Asymmetrical Layout */}
       <section className="relative py-32 bg-transparent text-white overflow-hidden border-b border-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
               <h2 className="text-[var(--color-brand-gold)] font-bold tracking-wider uppercase text-sm mb-3">
                 {isEn ? 'Our Portfolio' : 'معرض أعمالنا'}

@@ -18,7 +18,7 @@ export default function HeroCTA({ primaryCtaText, lang }: HeroCTAProps) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-semibold rounded-md text-[var(--color-brand-navy)] bg-[var(--color-brand-gold)] hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200"
+        className="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-semibold rounded-md text-[var(--color-brand-navy)] bg-[var(--color-brand-gold)] hover:bg-yellow-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 w-full sm:w-auto"
       >
         {primaryCtaText}
       </button>
@@ -35,17 +35,17 @@ export default function HeroCTA({ primaryCtaText, lang }: HeroCTAProps) {
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden relative"
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden relative max-h-[90vh] flex flex-col"
               dir={isAr ? 'rtl' : 'ltr'}
             >
               <button
                 onClick={() => setIsOpen(false)}
-                className={`absolute top-4 ${isAr ? 'left-4' : 'right-4'} p-2 text-gray-500 hover:text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors`}
+                className={`absolute top-4 ${isAr ? 'left-4' : 'right-4'} p-2 text-gray-500 hover:text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors z-10`}
               >
                 <X className="w-5 h-5" />
               </button>
               
-              <div className="p-8">
+              <div className="p-8 overflow-y-auto flex-grow">
                 <h3 className="text-2xl font-bold text-[var(--color-brand-navy)] mb-2">
                   {isAr ? 'طلب تقييم فني' : 'Request Technical Assessment'}
                 </h3>
@@ -54,7 +54,7 @@ export default function HeroCTA({ primaryCtaText, lang }: HeroCTAProps) {
                 </p>
 
                 <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setIsOpen(false); alert(isAr ? 'تم الاستلام بنجاح!' : 'Received successfully!'); }}>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
                       <label className="text-sm font-medium text-gray-700">{isAr ? 'الاسم الأول' : 'First Name'}</label>
                       <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-brand-blue)] focus:border-transparent outline-none" required />

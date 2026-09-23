@@ -10,7 +10,7 @@ export default function ProductMatrix() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Product Specification Matrix</h2>
                 <p className="text-sm md:text-base text-slate-400 mt-2 max-w-2xl">Compare technical features and specifications across our product lineup to find the perfect solution for your needs.</p>
             </div>
-            <div className="flex gap-2 relative z-10">
+            <div className="flex flex-wrap gap-2 relative z-10">
                 <span className="inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-sm text-[10px] uppercase font-mono font-bold bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue)] border border-[var(--color-brand-blue)]/30">Standard</span>
                 <span className="inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-sm text-[10px] uppercase font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Pro</span>
                 <span className="inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-sm text-[10px] uppercase font-mono font-bold bg-[var(--color-brand-gold)]/10 text-[var(--color-brand-gold)] border border-[var(--color-brand-gold)]/30">Inverter</span>
