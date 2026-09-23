@@ -1,0 +1,54 @@
+/* Shimmer effect for pool water */
+@keyframes waterShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-water-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 20%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.03) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% auto;
+  animation: waterShimmer 6s linear infinite;
+  mix-blend-mode: overlay;
+}
+
+/* Subtle warm pulse for heat pump */
+@keyframes warmPulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.animate-warm-pulse {
+  background: radial-gradient(circle, var(--color-brand-gold) 0%, transparent 70%);
+  animation: warmPulse 4s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* Step card hover transition */
+.step-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-water-shimmer,
+  .animate-warm-pulse {
+    animation: none;
+    opacity: 0.05;
+  }
+}
