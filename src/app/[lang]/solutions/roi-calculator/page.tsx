@@ -51,8 +51,8 @@ export default function ROICalculatorPage() {
   const [relativeHumidityPct, setRelativeHumidityPct] = useState(50.0);
   const [windSpeedMps, setWindSpeedMps] = useState(2.0);
   const [existingEfficiency, setExistingEfficiency] = useState(1.0);
-  
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

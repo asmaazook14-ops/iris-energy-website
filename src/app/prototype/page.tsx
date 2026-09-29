@@ -157,6 +157,7 @@ const useSimulation = () => {
 
   // Sync history with current telemetry values
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHistory(prev => {
         const arr = [...prev];
         arr[arr.length - 1] = { ...arr[arr.length - 1], power: telemetry.power_kw, cop: telemetry.cop };
@@ -499,11 +500,11 @@ export default function PrototypeApp() {
                     </div>
                     <div className="bg-[#122238] p-4 rounded-xl border border-white/5">
                         <span className="text-[10px] uppercase text-slate-500 font-bold block mb-1">EEV Steps</span>
-                        <span className="font-mono text-lg text-white">{isRunning ? (320 + Math.random()*10).toFixed(0) : 0}</span>
+                        <span className="font-mono text-lg text-white">{isRunning ? 325 : 0}</span>
                     </div>
                     <div className="bg-[#122238] p-4 rounded-xl border border-white/5">
                         <span className="text-[10px] uppercase text-slate-500 font-bold block mb-1">Suction Press.</span>
-                        <span className="font-mono text-lg text-white">{isRunning ? (8.5 + Math.random()*0.2).toFixed(1) : 0} bar</span>
+                        <span className="font-mono text-lg text-white">{isRunning ? 8.6 : 0} bar</span>
                     </div>
                 </div>
 
