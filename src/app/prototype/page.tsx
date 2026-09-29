@@ -11,21 +11,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import {
-  Power,
-  Settings,
-  Activity,
-  Zap,
-  Wind,
-  Droplets,
-  AlertTriangle,
-  Thermometer,
-  RefreshCcw,
-  Gauge,
-  Cpu,
-  Fan,
-  Info
-} from "lucide-react";
+import { Power, Settings, Activity, Zap, Wind, Droplets, AlertTriangle, Thermometer, RefreshCcw, Gauge, Cpu, Fan, Info } from "lucide-react";
 
 // --- Types ---
 type Mode = "HEATING" | "ECO" | "BOOST" | "STANDBY" | "FAULT";
