@@ -1,0 +1,12 @@
+region,fuel_type,price,unit,year,source_name,source_url
+US_National,electricity,0.1751,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (U.S. average residential electricity price forecast 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+New_England,electricity,0.2831,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+Middle_Atlantic,electricity,0.2362,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+East_North_Central,electricity,0.1806,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+West_North_Central,electricity,0.1535,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+South_Atlantic,electricity,0.1543,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+East_South_Central,electricity,0.1410,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+West_South_Central,electricity,0.1473,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+Mountain,electricity,0.1456,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+Pacific,electricity,0.2596,USD_per_kWh,2025,EIA Short-Term Energy Outlook - Table SF02 (regional residential price 2025),https://www.eia.gov/outlooks/steo/tables/pdf/SF02.pdf
+US_National,natural_gas,1.262,USD_per_therm,2025,"EIA Natural Gas Monthly - Table 3 (U.S. residential price, 2025 2-month YTD, converted from $/Mcf using 1 Mcf ~ 10 therms)",https://www.eia.gov/naturalgas/monthly/pdf/table_03.pdf

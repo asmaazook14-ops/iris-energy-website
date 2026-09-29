@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Small indoor pool, electric heater",
+    "inputs": {
+      "pool_type": "indoor",
+      "length_m": 5.0,
+      "width_m": 3.0,
+      "avg_depth_m": 1.2,
+      "has_cover": true,
+      "cover_reduction_factor": 0.6,
+      "current_water_temp_c": 15.0,
+      "target_water_temp_c": 30.0,
+      "operating_hours_per_day": 12.0,
+      "operating_days_per_week": 7,
+      "monthly_avg_air_temp_c": {
+        "January": 22.0,
+        "February": 22.0
+      },
+      "relative_humidity_pct": 50.0,
+      "wind_speed_mps": 0.0,
+      "existing_system_type": "electric_resistance",
+      "existing_efficiency": 1.0,
+      "electricity_price_per_kwh": 0.15,
+      "installation_cost_usd": 1500.0,
+      "rebate_usd": 0.0,
+      "region": "US_National"
+    },
+    "output": {
+      "total_thermal_demand_kwh": 943.6725415808373,
+      "required_capacity_btu": 3532.3055614493487,
+      "total_electricity_consumption_kwh": 185.7623113348105,
+      "heat_pump_annual_cost": 27.864346700221574,
+      "baseline_annual_cost": 141.5508812371256,
+      "annual_savings": 113.68653453690402,
+      "net_investment": 6099.0,
+      "payback_years": 53.647514411833804,
+      "roi_5yr_pct": -90.67990371069814
+    }
+  },
+  {
+    "name": "Large outdoor pool, gas heater",
+    "inputs": {
+      "pool_type": "outdoor",
+      "length_m": 25.0,
+      "width_m": 12.5,
+      "avg_depth_m": 2.0,
+      "has_cover": false,
+      "current_water_temp_c": 10.0,
+      "target_water_temp_c": 28.0,
+      "operating_hours_per_day": 24.0,
+      "operating_days_per_week": 7,
+      "monthly_avg_air_temp_c": {
+        "June": 25.0,
+        "July": 28.0,
+        "August": 27.0
+      },
+      "relative_humidity_pct": 60.0,
+      "wind_speed_mps": 3.0,
+      "existing_system_type": "gas",
+      "existing_efficiency": 0.8,
+      "electricity_price_per_kwh": 0.12,
+      "gas_price_per_therm": 1.5,
+      "installation_cost_usd": 5000.0,
+      "rebate_usd": 1000.0,
+      "region": "US_National"
+    },
+    "output": {
+      "total_thermal_demand_kwh": 194753.80998084467,
+      "required_capacity_btu": 415285.9095945015,
+      "total_electricity_consumption_kwh": 31880.27276991955,
+      "heat_pump_annual_cost": 3825.6327323903456,
+      "baseline_annual_cost": 12462.871925832464,
+      "annual_savings": 8637.239193442118,
+      "net_investment": 9499.0,
+      "payback_years": 1.0997727152458832,
+      "roi_5yr_pct": 354.6393932751931
+    }
+  },
+  {
+    "name": "Medium outdoor pool, no existing heater",
+    "inputs": {
+      "pool_type": "outdoor",
+      "length_m": 10.0,
+      "width_m": 5.0,
+      "avg_depth_m": 1.5,
+      "has_cover": true,
+      "current_water_temp_c": 20.0,
+      "target_water_temp_c": 26.0,
+      "operating_hours_per_day": 8.0,
+      "operating_days_per_week": 5,
+      "monthly_avg_air_temp_c": {
+        "May": 20.0,
+        "June": 24.0,
+        "July": 26.0
+      },
+      "relative_humidity_pct": 70.0,
+      "wind_speed_mps": 1.5,
+      "existing_system_type": "none",
+      "existing_efficiency": 1.0,
+      "electricity_price_per_kwh": 0.2,
+      "installation_cost_usd": 2000.0,
+      "rebate_usd": 500.0,
+      "region": "US_National"
+    },
+    "output": {
+      "total_thermal_demand_kwh": 2642.0475246967208,
+      "required_capacity_btu": 28500.738189841566,
+      "total_electricity_consumption_kwh": 524.6158814297314,
+      "heat_pump_annual_cost": 104.92317628594628,
+      "baseline_annual_cost": 0.0,
+      "annual_savings": -104.92317628594628,
+      "net_investment": 6099.0,
+      "payback_years": "Infinity",
+      "roi_5yr_pct": -108.60167046121876
+    }
+  }
+]

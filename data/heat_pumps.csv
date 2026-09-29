@@ -1,0 +1,4 @@
+manufacturer,model,ahri_capacity_btu_high,ahri_cop_high,ahri_capacity_btu_low,ahri_cop_low,test_water_temp_f,test_air_temp_high_f,test_air_temp_low_f,test_rh_pct,min_operating_air_temp_f,price_usd,specs_source,price_source
+Hayward,HeatPro HP31005T,94000,6.2,61000,4.2,80,80,50,63,40,5499,https://royalswimmingpools.com/Merchant2/graphics/00000001/eLITHP100K21_HeatPro_Round_Sell_Sheet.pdf,https://www.homedepot.com/p/HAYWARD-HeatPro-100-000-BTU-In-Ground-Heat-Pump-Pool-Heater-W3HP31005T-A/333777485
+Hayward,HeatPro HP21004T,85000,5.5,59000,4.0,80,80,50,63,50,4599,https://hayward.com/media/akeneo_connector/asset_files/L/I/LITHTPRO23_HeatPro_Series_Sell_Sheet_DIGITAL_5b7e.pdf,https://homedepot.com/p/HAYWARD-HeatPro-In-ground-90-000-BTU-Heat-Pump-Pool-Heater-W3HP21004T/311963777
+Heat Siphon (Aqua Thermal Access),Z200HP,44500,5.6,32500,4.2,80,80,50,63,DATA_NOT_AVAILABLE,DATA_NOT_AVAILABLE,https://heatsiphon.com/2006website/pickyourmodel/5model.specs.html,DATA_NOT_AVAILABLE
