@@ -125,7 +125,7 @@ export default function ROICalculatorPage() {
         <div className="container mx-auto px-4 relative z-10">
           <Link href={`/${lang}/solutions`} className="inline-flex items-center text-[var(--color-brand-blue)] hover:text-white transition-colors mb-6 font-semibold">
             <ArrowLeft className={`w-4 h-4 ${isEn ? 'mr-2' : 'ml-2 rtl:rotate-180'}`} />
-            {isEn ? 'Back to Solutions' : 'العودة إلى الحلول'}
+            {isEn ? 'Back to Services' : 'العودة إلى الخدمات'}
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-12 bg-[var(--color-brand-blue)]/20 border border-[var(--color-brand-blue)] rounded-xl flex items-center justify-center">
