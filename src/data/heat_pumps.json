@@ -1,0 +1,50 @@
+[
+  {
+    "manufacturer": "Hayward",
+    "model": "HeatPro HP31005T",
+    "ahri_capacity_btu_high": "94000",
+    "ahri_cop_high": "6.2",
+    "ahri_capacity_btu_low": "61000",
+    "ahri_cop_low": "4.2",
+    "test_water_temp_f": "80",
+    "test_air_temp_high_f": "80",
+    "test_air_temp_low_f": "50",
+    "test_rh_pct": "63",
+    "min_operating_air_temp_f": "40",
+    "price_usd": "5499",
+    "specs_source": "https://royalswimmingpools.com/Merchant2/graphics/00000001/eLITHP100K21_HeatPro_Round_Sell_Sheet.pdf",
+    "price_source": "https://www.homedepot.com/p/HAYWARD-HeatPro-100-000-BTU-In-Ground-Heat-Pump-Pool-Heater-W3HP31005T-A/333777485"
+  },
+  {
+    "manufacturer": "Hayward",
+    "model": "HeatPro HP21004T",
+    "ahri_capacity_btu_high": "85000",
+    "ahri_cop_high": "5.5",
+    "ahri_capacity_btu_low": "59000",
+    "ahri_cop_low": "4.0",
+    "test_water_temp_f": "80",
+    "test_air_temp_high_f": "80",
+    "test_air_temp_low_f": "50",
+    "test_rh_pct": "63",
+    "min_operating_air_temp_f": "50",
+    "price_usd": "4599",
+    "specs_source": "https://hayward.com/media/akeneo_connector/asset_files/L/I/LITHTPRO23_HeatPro_Series_Sell_Sheet_DIGITAL_5b7e.pdf",
+    "price_source": "https://homedepot.com/p/HAYWARD-HeatPro-In-ground-90-000-BTU-Heat-Pump-Pool-Heater-W3HP21004T/311963777"
+  },
+  {
+    "manufacturer": "Heat Siphon (Aqua Thermal Access)",
+    "model": "Z200HP",
+    "ahri_capacity_btu_high": "44500",
+    "ahri_cop_high": "5.6",
+    "ahri_capacity_btu_low": "32500",
+    "ahri_cop_low": "4.2",
+    "test_water_temp_f": "80",
+    "test_air_temp_high_f": "80",
+    "test_air_temp_low_f": "50",
+    "test_rh_pct": "63",
+    "min_operating_air_temp_f": "DATA_NOT_AVAILABLE",
+    "price_usd": "DATA_NOT_AVAILABLE",
+    "specs_source": "https://heatsiphon.com/2006website/pickyourmodel/5model.specs.html",
+    "price_source": "DATA_NOT_AVAILABLE"
+  }
+]
