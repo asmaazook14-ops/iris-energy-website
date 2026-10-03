@@ -89,7 +89,7 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
             className="w-full h-full object-cover"
           />
           {/* Subtle Dark Overlay/Gradient to ensure text readability */}
-          <div className="absolute inset-0 bg-[#0B192C]/60 md:bg-gradient-to-r md:from-[#0B192C]/90 md:via-[#0B192C]/60 md:to-[#0B192C]/40" />
+          <div className="absolute inset-0 bg-[#0B192C]/30 md:bg-gradient-to-r md:from-[#0B192C]/70 md:via-[#0B192C]/20 md:to-transparent" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 mt-12 lg:mt-0">
