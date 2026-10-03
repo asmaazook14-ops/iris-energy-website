@@ -76,66 +76,41 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
     <div className="bg-[#0B192C]">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center border-b border-white overflow-hidden pt-20 lg:pt-0">
-        {/* Background Engineering Schematic Graphics */}
-        <div className="absolute inset-0 z-0 bg-[#0B192C]">
-          <Image
-            src="/images/Homepage/figma-hero-bg.png"
-            alt="IRIS Energy Commercial Pool Installation"
-            fill
-            className="object-cover opacity-60"
-            priority
+      <section className="relative min-h-[90vh] flex items-center border-b border-white overflow-hidden">
+        {/* Full-screen Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            src="/videos/pool-heat-pump.mp4"
+            poster="/images/Homepage/homepage-residential-pool-heat-pump.webp"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#0B192C]/80 md:bg-gradient-to-r md:from-[#0B192C] md:via-[#0B192C]/90 md:to-transparent" />
-          
-          <div className="absolute top-1/4 right-10 w-[800px] h-[800px] border-[1px] border-[var(--color-brand-blue)]/20 rounded-full border-dashed animate-[spin_120s_linear_infinite]" />
+          {/* Subtle Dark Overlay/Gradient to ensure text readability */}
+          <div className="absolute inset-0 bg-[#0B192C]/60 md:bg-gradient-to-r md:from-[#0B192C]/90 md:via-[#0B192C]/60 md:to-[#0B192C]/40" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            {/* Left/Top Content: Text */}
-            <div className="lg:col-span-7 max-w-3xl">
-              <span className="inline-flex items-center py-1 px-4 rounded-full bg-[var(--color-brand-blue)]/10 border border-[var(--color-brand-blue)]/30 text-xs font-bold tracking-widest mb-6 text-blue-300 uppercase">
-                {dict.hero.eyebrow}
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-                {isEn ? 'Engineering High-Efficiency Thermal & Heat-Pump Solutions.' : 'تصميم حلول حرارية ومضخات حرارية عالية الكفاءة.'}
-              </h1>
-              <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-xl font-light leading-relaxed">
-                {isEn ? 'From thermal assessment and system sizing to supply, integration, commissioning, and long-term efficiency support.' : 'من التقييم الحراري وتحديد حجم النظام إلى التوريد والتكامل والتشغيل ودعم الكفاءة على المدى الطويل.'}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <HeroCTA primaryCtaText={dict.hero.primaryCta} lang={lang} />
-                <Link
-                  href={`/${lang}/request-study`}
-                  className="inline-flex justify-center items-center px-8 py-4 border border-slate-200 text-base font-bold rounded-md text-white bg-[#f59e0b] hover:opacity-90 transition-all"
-                >
-                  {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
-                </Link>
-              </div>
-            </div>
-
-            {/* Right/Bottom Content: Video */}
-            <div className="lg:col-span-5 w-full">
-              <div className="relative w-full aspect-[4/5] md:aspect-video lg:aspect-[4/5] rounded-3xl overflow-hidden border border-white/20 shadow-[0_0_50px_rgba(37,99,235,0.15)] group transform transition-transform duration-700 hover:scale-[1.02]">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B192C] via-transparent to-transparent z-10 pointer-events-none opacity-60" />
-                <video 
-                  src="/videos/pool-heat-pump.mp4"
-                  poster="/images/Homepage/homepage-residential-pool-heat-pump.webp"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover relative z-0"
-                />
-                {/* Glowing decorative elements inside the video card */}
-                <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-black/40 backdrop-blur-md rounded-full px-4 py-2 border border-white/10">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-xs font-semibold text-white tracking-wider uppercase">
-                    {isEn ? 'Active System' : 'نظام نشط'}
-                  </span>
-                </div>
-              </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-24 mt-12 lg:mt-0">
+          <div className="max-w-4xl">
+            <span className="inline-flex items-center py-1 px-4 rounded-full bg-[var(--color-brand-blue)]/30 border border-[var(--color-brand-blue)]/50 text-xs font-bold tracking-widest mb-6 text-white uppercase backdrop-blur-sm shadow-sm">
+              {dict.hero.eyebrow}
+            </span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-xl">
+              {isEn ? 'Engineering High-Efficiency Thermal & Heat-Pump Solutions.' : 'تصميم حلول حرارية ومضخات حرارية عالية الكفاءة.'}
+            </h1>
+            <p className="text-lg md:text-2xl text-slate-100 mb-10 max-w-2xl font-medium leading-relaxed drop-shadow-md">
+              {isEn ? 'From thermal assessment and system sizing to supply, integration, commissioning, and long-term efficiency support.' : 'من التقييم الحراري وتحديد حجم النظام إلى التوريد والتكامل والتشغيل ودعم الكفاءة على المدى الطويل.'}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <HeroCTA primaryCtaText={dict.hero.primaryCta} lang={lang} />
+              <Link
+                href={`/${lang}/request-study`}
+                className="inline-flex justify-center items-center px-8 py-4 border border-white/20 text-base font-bold rounded-md text-white bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all shadow-lg"
+              >
+                {isEn ? 'Request a Technical Study' : 'طلب دراسة فنية'}
+              </Link>
             </div>
           </div>
         </div>
@@ -196,9 +171,8 @@ export default async function Home(props: { params: Promise<{ lang: 'en' | 'ar' 
               }
             }}
             media={{
-              type: 'video',
-              src: '/videos/pool-heat-pump.mp4',
-              poster: '/images/Homepage/homepage-residential-pool-heat-pump.webp',
+              type: 'image',
+              src: '/images/Homepage/homepage-residential-pool-heat-pump.webp',
               alt: isEn ? 'IRIS Pool Heat Pump Installation in Action' : 'عمل مضخة حرارية لمسبح IRIS'
             }}
           />
