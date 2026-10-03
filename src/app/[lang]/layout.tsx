@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ContinuousScroll } from "@/components/ContinuousScroll";
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'ar' }];
@@ -16,6 +17,7 @@ export default async function LangLayout(props: {
 
   return (
     <div lang={lang} dir={dir} className={`${fontClass} min-h-screen flex flex-col relative`}>
+      <ContinuousScroll lang={lang} />
       {/* Engineered Technical Background */}
       <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#0B192C]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
