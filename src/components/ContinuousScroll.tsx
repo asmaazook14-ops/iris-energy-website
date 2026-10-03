@@ -33,15 +33,19 @@ export function ContinuousScroll({ lang }: { lang: string }) {
     const scrollDirection = sessionStorage.getItem('scrollDirection');
     if (scrollDirection) {
       sessionStorage.removeItem('scrollDirection');
-      // Use requestAnimationFrame to ensure layout is done
+      if (scrollDirection === 'up') {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    }
+
+    // Resolve the view transition AFTER scrolling, so the captured new state is correct
+    if (typeof window !== 'undefined' && (window as any).__resolveTransition) {
+      // Small delay to let Next.js render pass complete
       requestAnimationFrame(() => {
-        setTimeout(() => {
-          if (scrollDirection === 'up') {
-            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' });
-          } else {
-            window.scrollTo({ top: 0, behavior: 'instant' });
-          }
-        }, 50); 
+        (window as any).__resolveTransition();
+        delete (window as any).__resolveTransition;
       });
     }
   }, [pathname]);
@@ -66,7 +70,23 @@ export function ContinuousScroll({ lang }: { lang: string }) {
       isNavigating.current = true;
       sessionStorage.setItem('scrollDirection', direction);
       
-      router.push(path, { scroll: false });
+      const doc = document as any;
+      if (!doc.startViewTransition) {
+        router.push(path, { scroll: false });
+        return;
+      }
+
+      document.documentElement.setAttribute('data-transition-direction', direction);
+      
+      doc.startViewTransition(async () => {
+        router.push(path, { scroll: false });
+        // Wait for Next.js to update the DOM before finishing the transition setup
+        await new Promise<void>(resolve => {
+          (window as any).__resolveTransition = resolve;
+          // Fallback in case Next.js routing fails or takes too long
+          setTimeout(resolve, 1500);
+        });
+      });
     };
 
     const handleWheel = (e: WheelEvent) => {
